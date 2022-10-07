@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { FlairProvider } from 'flair-sdk';
+import { FlairProvider } from '@flair-sdk/react';
 
 import './index.css';
 import App from './App';

@@ -1,4 +1,4 @@
-# Example: Custom NFT Minting Sales Page using React
+# Example: Custom Sales Page using React
 
 This example React app renders a minting widget for an NFT collection deployed via [Flair's dashboard](https://app.flair.dev).
 
@@ -15,7 +15,7 @@ This example React app renders a minting widget for an NFT collection deployed v
    ```sh
    git clone https://github.com/flair-sdk/examples
 
-   cd examples/react/custom-nft-minting-sales
+   cd examples/react/custom-tiered-sales
 
    npm install
    ```
@@ -31,7 +31,7 @@ This example React app renders a minting widget for an NFT collection deployed v
 
 5. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-![Screenshot](./collection-public-minting.png)
+![Screenshot](./custom-minting-website.png)
 
 ## 🔮 Tutorial
 
@@ -57,8 +57,8 @@ To use this example within your app:
 
 3. Implement the minting widget depending on your preferred customizability:
 
-   - Easiest approach with minimum customizability you can copy the code within [App.tsx](./src/App.tsx).
-   - To have your own layout you can use individual components as in [TieredSalesMintingSection.tsx](https://github.com/flair-sdk/typescript/blob/main/packages/react/src/modules/finance/tiered-sales/sections/TieredSalesMintingSection.tsx)
+   - If you need control over each element you can copy and customize the code within [App.tsx](./src/App.tsx).
+   - To use a ready-made component for basic minting functionality you can use [TieredSalesMintingSection.tsx](https://github.com/flair-sdk/typescript/blob/main/packages/react/src/modules/finance/tiered-sales/sections/TieredSalesMintingSection.tsx) component (it has Mint count, Mint button, Statuses, and loading bar)
 
 4. _(optional)_ If you're using Webpack 5 (e.g. React v17+) you need to manually configure Buffer for Coinbase wallet to work:
 
