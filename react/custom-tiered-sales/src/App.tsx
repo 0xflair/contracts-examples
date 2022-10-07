@@ -99,21 +99,23 @@ function App() {
                 </ConnectButton>
 
                 {/* Maximum Eligible Amount */}
-                <small className="block font-light mt-2 text-xs">
-                  <TieredSalesIfWalletCanMint>
-                    You can mint up to{" "}
-                    <TieredSalesEligibleAmount as="div" className="inline" />.{" "}
-                  </TieredSalesIfWalletCanMint>
-                  {isConnected ? (
-                    <>
-                      You have minted <TieredSalesWalletMints /> NFTs in this
-                      tier.
-                    </>
-                  ) : null}
-                </small>
+                <IfWalletConnected>
+                  <small className="block font-light mt-2 text-xs">
+                    <TieredSalesIfWalletCanMint>
+                      You can mint up to{" "}
+                      <TieredSalesEligibleAmount as="div" className="inline" />.{" "}
+                    </TieredSalesIfWalletCanMint>
+                    {isConnected ? (
+                      <>
+                        You have minted <TieredSalesWalletMints /> NFTs in this
+                        tier.
+                      </>
+                    ) : null}
+                  </small>
+                </IfWalletConnected>
               </div>
 
-                {/* Transaction Status Bar */}
+              {/* Transaction Status Bar */}
               <TieredSalesMintStatusBar className="mt-4 flex flex-col gap-2" />
             </div>
           </main>

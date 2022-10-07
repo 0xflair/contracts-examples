@@ -1,5 +1,5 @@
 {
-  "name": "custom-nft-minting-sales",
+  "name": "custom-tiered-sales",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

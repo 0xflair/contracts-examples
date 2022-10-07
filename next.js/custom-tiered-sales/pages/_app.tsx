@@ -1,8 +1,14 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import "../styles/globals.css";
+import type { AppProps } from "next/app";
+
+import { FlairProvider } from "@flair-sdk/react";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <FlairProvider>
+      <Component {...pageProps} />
+    </FlairProvider>
+  );
 }
 
-export default MyApp
+export default MyApp;

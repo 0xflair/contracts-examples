@@ -1,34 +1,68 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Example: Custom Sales Page using Next.js
 
-## Getting Started
+This example React app renders a minting widget for an NFT collection deployed via [Flair's dashboard](https://app.flair.dev).
 
-First, run the development server:
+##### Dependencies
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+- `flair-sdk`: latest
+- `react`: v17.x or v18.x
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## :fire: Quick Start
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+1. Create a new NFT collection using [Flair's dashboard](https://app.flair.dev). Note that you will be the full owner of smart contract.
+2. Clone the examples repo, install dependencies in the `custom-tiered-sales` directory:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+   ```sh
+   git clone https://github.com/flair-sdk/examples
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+   cd examples/next.js/custom-tiered-sales
 
-## Learn More
+   yarn
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+3. Grab your contract address and chain ID, and update [.env](./.env):
+   - Set `REACT_APP_COLLECTION_CONTRACT_ADDRESS` to your deployed contract address you get from Flair's dashboard > Collections > your-collection > Deploy tab.
+   - Set `REACT_APP_COLLECTION_CHAIN_ID` depending on the contract chain. Use `1` for Eth mainnet, `4` for Rinkeby testnet, `137` for Polygon mainnet, etc.
+4. Run the react app in the `custom-tiered-sales` directory:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```sh
+   yarn dev
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+5. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-## Deploy on Vercel
+![Screenshot](./custom-minting-website.png)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🔮 Tutorial
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+To use this example within your app:
+
+1. Install `flair-sdk` in your React app:
+
+   ```sh
+   npm install flair-sdk
+   ```
+
+2. Configure FlairProvider around your root App:
+
+   ```ts
+   import { FlairProvider } from "@flair-sdk/react";
+
+   // ...
+   <FlairProvider>
+     <App />
+   </FlairProvider>;
+   // ...
+   ```
+
+3. Implement the minting widget depending on your preferred customizability:
+
+   - If you need control over each element you can copy and customize the code within [App.tsx](./src/App.tsx).
+   - To use a ready-made component for basic minting functionality you can use [TieredSalesMintingSection.tsx](https://github.com/flair-sdk/typescript/blob/main/packages/react/src/modules/finance/tiered-sales/sections/TieredSalesMintingSection.tsx) component (it has Mint count, Mint button, Statuses, and loading bar)
+
+4. _(optional)_ If you're using Webpack 5 (e.g. React v17+) you need to manually configure Buffer for Coinbase wallet to work:
+
+   1. Install `npm install react-app-rewired buffer`
+   2. Then create a [config-overrides.js](config-overrides.js) to inject the Buffer.
+
+5. Profit :rocket:
