@@ -20,9 +20,9 @@ import { useAccount } from "wagmi";
 import { useState } from "react";
 import { BigNumberish } from "ethers";
 
-const chainId = Number(process.env.NEXT_PUBLIC_COLLECTION_CHAIN_ID);
+const chainId = Number(process.env.NEXT_PUBLIC_CONTRACT_CHAIN_ID);
 const contractAddress = process.env
-  .NEXT_PUBLIC_COLLECTION_CONTRACT_ADDRESS as string;
+  .NEXT_PUBLIC_CONTRACT_ADDRESS as string;
 
 const Home: NextPage = () => {
   const { isConnected } = useAccount();
