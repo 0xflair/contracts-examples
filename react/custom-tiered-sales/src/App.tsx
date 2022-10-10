@@ -1,4 +1,8 @@
 import {
+  ConnectButton,
+  SwitchChainButton,
+  WalletDropdown,
+  IfWalletConnected,
   TieredSalesProvider,
   TieredSalesStatus,
   TieredSalesAllowlistStatus,
@@ -6,14 +10,11 @@ import {
   TieredSalesPrice,
   TieredSalesMintInput,
   TieredSalesMintButton,
-  ConnectButton,
-  SwitchChainButton,
-  WalletDropdown,
-  IfWalletConnected,
   TieredSalesMintingSection,
   TieredSalesIfWalletCanMint,
   TieredSalesEligibleAmount,
   TieredSalesWalletMints,
+  TieredSalesSelector,
 } from "@flair-sdk/react";
 
 import React, { useState } from "react";
@@ -47,7 +48,12 @@ function App() {
             </IfWalletConnected>
           </div>
 
-          <main className="flex flex-col gap-x-8">
+          <main className="flex flex-col gap-y-8">
+            {/* Tier Selector */}
+            <div className="flex gap-2 items-center justify-center">
+              <TieredSalesSelector />
+            </div>
+
             <div>
               {/* Sale Status and Price */}
               <div className="mt-4 flex gap-4 justify-between">
@@ -64,7 +70,7 @@ function App() {
             <div>
               <div>
                 {/* Mint Count */}
-                <div className="mt-8 mb-4">
+                <div className="mb-4">
                   <div className="flex items-center justify-between">
                     <h2 className="text-sm font-medium text-gray-900">
                       How many to mint?

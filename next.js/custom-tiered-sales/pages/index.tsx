@@ -1,18 +1,19 @@
 import {
-  TieredSalesProvider,
+  ConnectButton,
+  SwitchChainButton,
   IfWalletConnected,
   WalletDropdown,
+  TieredSalesProvider,
   TieredSalesStatus,
   TieredSalesAllowlistStatus,
   TieredSalesPrice,
   TieredSalesMintInput,
-  ConnectButton,
-  SwitchChainButton,
   TieredSalesMintButton,
   TieredSalesIfWalletCanMint,
   TieredSalesEligibleAmount,
   TieredSalesWalletMints,
   TieredSalesMintStatusBar,
+  TieredSalesSelector,
 } from "@flair-sdk/react";
 
 import type { NextPage } from "next";
@@ -47,7 +48,13 @@ const Home: NextPage = () => {
             </IfWalletConnected>
           </div>
 
-          <main className="flex flex-col gap-x-8">
+          <main className="flex flex-col gap-y-8">
+            {/* Tier Selector */}
+            {/* TODO Find a way to cleanly avoid hydration issue on Next.js SSR */}
+            {/* <div className="flex gap-2 items-center justify-center">
+              <TieredSalesSelector />
+            </div> */}
+
             <div>
               {/* Sale Status and Price */}
               <div className="mt-4 flex gap-4 justify-between">

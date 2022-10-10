@@ -2,6 +2,8 @@
 
 This example React app renders a minting widget for an ERC721 (A) NFT collection deployed via [Flair's dashboard](https://app.flair.dev).
 
+The main difference between this example and [custom-tiered-sales](../custom-tiered-sales/) is this: Since we know this sales is for an ERC721 collection we can render a "Supply Counter" for the total and max supply of the collection.
+
 ##### Dependencies
 
 - `flair-sdk`: latest

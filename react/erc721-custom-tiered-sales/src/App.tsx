@@ -1,4 +1,8 @@
 import {
+  ConnectButton,
+  SwitchChainButton,
+  WalletDropdown,
+  IfWalletConnected,
   TieredSalesProvider,
   TieredSalesStatus,
   TieredSalesAllowlistStatus,
@@ -6,14 +10,13 @@ import {
   TieredSalesPrice,
   TieredSalesMintInput,
   TieredSalesMintButton,
-  ConnectButton,
-  SwitchChainButton,
-  WalletDropdown,
-  IfWalletConnected,
   TieredSalesMintingSection,
   TieredSalesIfWalletCanMint,
   TieredSalesEligibleAmount,
   TieredSalesWalletMints,
+  TieredSalesSelector,
+  ERC721TotalSupply,
+  ERC721MaxSupply,
 } from "@flair-sdk/react";
 
 import React, { useState } from "react";
@@ -21,8 +24,7 @@ import { useAccount } from "wagmi";
 import { BigNumberish } from "ethers";
 
 const chainId = Number(process.env.REACT_APP_CONTRACT_CHAIN_ID);
-const contractAddress = process.env
-  .REACT_APP_CONTRACT_ADDRESS as string;
+const contractAddress = process.env.REACT_APP_CONTRACT_ADDRESS as string;
 
 function App() {
   const { isConnected } = useAccount();
@@ -38,7 +40,7 @@ function App() {
         chainId={Number(chainId)}
         contractAddress={contractAddress}
       >
-        <main className="h-fit max-w-2xl min-w-xl mx-auto lg:max-w-5xl flex flex-col gap-8 items-center p-4">
+        <main className="h-fit w-full max-w-2xl min-w-xl mx-auto lg:max-w-5xl flex flex-col gap-8 items-center p-4">
           {/* Sales Title */}
           <div className="flex flex-col gap-4 items-center justify-between">
             <h2 className="font-bold text-2xl">My Amazing NFT</h2>
@@ -47,9 +49,23 @@ function App() {
             </IfWalletConnected>
           </div>
 
-          <main className="flex flex-col gap-x-8">
+          <main className="flex flex-col gap-y-8">
+            {/* Tier Selector */}
+            <div className="flex gap-2 items-center justify-center">
+              <TieredSalesSelector />
+            </div>
+
+            {/* Sale Info */}
             <div>
-              {/* Sale Status and Price */}
+              {/* Price */}
+              <div className="flex gap-2 items-center justify-center">
+                <TieredSalesPrice
+                  showPrice={true}
+                  className="text-lg font-medium text-gray-900 whitespace-nowrap"
+                />
+              </div>
+
+              {/* Status and Supply Counter */}
               <div className="mt-4 flex gap-4 justify-between">
                 <div className="flex flex-col flex-wrap sm:flex-row sm:items-center gap-4">
                   <TieredSalesStatus />
@@ -57,14 +73,24 @@ function App() {
                   {isConnected && <TieredSalesAllowlistStatus />}
                 </div>
 
-                <TieredSalesPrice className="text-xl font-medium text-gray-900 whitespace-nowrap" />
+                <div className="inline-block rounded-full bg-gray-100 px-4 py-2 text-center">
+                  <ERC721TotalSupply
+                    chainId={chainId}
+                    contractAddress={contractAddress}
+                  />{" "}
+                  /{" "}
+                  <ERC721MaxSupply
+                    chainId={chainId}
+                    contractAddress={contractAddress}
+                  />
+                </div>
               </div>
             </div>
 
+            {/* Mint Widget */}
             <div>
               <div>
-                {/* Mint Count */}
-                <div className="mt-8 mb-4">
+                <div className="mb-4">
                   <div className="flex items-center justify-between">
                     <h2 className="text-sm font-medium text-gray-900">
                       How many to mint?
