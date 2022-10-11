@@ -32,7 +32,7 @@ contract MyFirstToken is ERC721A, OwnableInternal, AccessControlInternal, ERC721
     }
 
     function mintForSale(address to, uint256 count) public {
-        require(_hasRole(MINTER_ROLE, msg.sender), "MinterRole: caller does not have the Minter role");
+        require(_hasRole(MINTER_ROLE, msg.sender), "MyFirstToken: caller does not have the Minter role");
         _mint(to, count);
     }
 }

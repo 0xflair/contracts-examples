@@ -1,8 +1,8 @@
 {
   "my-amazing-team:sales/MyCustomTieredSales": {
     "addresses": {
-      "5": "0x0C5C80d878D3eFa8D2f221F61C3A21FeD253FD97",
-      "goerli": "0x0C5C80d878D3eFa8D2f221F61C3A21FeD253FD97"
+      "5": "0xB0b4Cf8587E2d983D17b1f9B448Bc9d80de78D07",
+      "goerli": "0xB0b4Cf8587E2d983D17b1f9B448Bc9d80de78D07"
     },
     "functionSelectors": [
       "eligibleForTier(uint256,address,uint256,bytes32[])",

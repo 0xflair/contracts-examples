@@ -32,7 +32,7 @@ contract MySecondToken is ERC721A, OwnableInternal, AccessControlInternal, ERC72
     }
 
     function mintForSale(address to, uint256 count) public {
-        require(_hasRole(MINTER_ROLE, msg.sender), "MinterRole: caller does not have the Minter role");
+        require(_hasRole(MINTER_ROLE, msg.sender), "MySecondToken: caller does not have the Minter role");
         _mint(to, count);
     }
 }
