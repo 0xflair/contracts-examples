@@ -1,0 +1,32 @@
+{
+  "my-amazing-team:sales/MyCustomTieredSales": {
+    "addresses": {
+      "5": "0x0C5C80d878D3eFa8D2f221F61C3A21FeD253FD97",
+      "goerli": "0x0C5C80d878D3eFa8D2f221F61C3A21FeD253FD97"
+    },
+    "functionSelectors": [
+      "eligibleForTier(uint256,address,uint256,bytes32[])",
+      "mintByTier(uint256,uint256,uint256,bytes32[])",
+      "onTierAllowlist(uint256,address,uint256,bytes32[])",
+      "remainingForTier(uint256)",
+      "reservedMints()",
+      "setTargetTokens(address,address)",
+      "tierMints(uint256)",
+      "tiers(uint256)",
+      "totalReserved()",
+      "walletMintedByTier(uint256,address)"
+    ],
+    "fqn": "my-amazing-team:sales/MyCustomTieredSales",
+    "version": "0.0.1",
+    "providesInterfaces": [
+      "0x79f33254"
+    ],
+    "peerDependencies": [],
+    "requiredDependencies": [],
+    "category": "NFTs",
+    "title": "My Custom Tiered Sales",
+    "notice": "This is developed in-house to provide custom sales mechanism for our custom project.",
+    "source": "https://github.com/flair-sdk/examples/blob/v0.0.1/src/sales/MyCustomTieredSales.sol",
+    "author": "my-amazing-team.eth"
+  }
+}

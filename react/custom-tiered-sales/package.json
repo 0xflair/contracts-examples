@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@flair-sdk/react": "^2.27.5",
+    "@flair-sdk/react": "^2.30.0",
     "@gnosis.pm/safe-apps-provider": "^0.13.1",
     "@gnosis.pm/safe-apps-sdk": "^7.8.0",
     "@headlessui/react": "^1.6.4",

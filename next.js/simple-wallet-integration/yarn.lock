@@ -713,10 +713,10 @@
     "@wagmi/core" "^0.4.9"
     magic-sdk "^8.1.1"
 
-"@flair-sdk/common@^2.27.5":
-  version "2.27.5"
-  resolved "https://registry.yarnpkg.com/@flair-sdk/common/-/common-2.27.5.tgz#c6c07d640a32727814141013fc8edb2f09a09e28"
-  integrity sha512-S/iXwMq/eHhIMPnznzb2fKBxzRtzeUiUWr+rlRUiRQJimXKAbCYDaXt1nOXIInTyo5xsOWDSr/AEA2D4FW8Q4w==
+"@flair-sdk/common@^2.30.0":
+  version "2.30.0"
+  resolved "https://registry.yarnpkg.com/@flair-sdk/common/-/common-2.30.0.tgz#5cc05d9294978ef094495c00be052d546214ff24"
+  integrity sha512-9eCXYH3PnPuq8c2LA0mRJRzOck969809uwq4F6SJHAt70ix5hJgbk4ll6wOo1leisORLFw3ZSXx9YehUJO2QvQ==
   dependencies:
     "@everipedia/wagmi-magic-connector" "^0.6.5"
     "@gnosis.pm/safe-apps-provider" "^0.13.1"
@@ -724,42 +724,42 @@
     "@wagmi/core" "^0.5.7"
     ethers "^5.6.5"
 
-"@flair-sdk/icons@^2.27.5":
-  version "2.27.5"
-  resolved "https://registry.yarnpkg.com/@flair-sdk/icons/-/icons-2.27.5.tgz#82b40b72a9f57d6dd4bc89dda72445978bd07c5a"
-  integrity sha512-jxRwoj4lTqung0XcM+VaY38rjn9jab3ZIx3vFFDI6hjAOvm6EGM+jM/Yp6WRNFJcJ5/J+GET7te+sw+v21J6ow==
+"@flair-sdk/icons@^2.30.0":
+  version "2.30.0"
+  resolved "https://registry.yarnpkg.com/@flair-sdk/icons/-/icons-2.30.0.tgz#3a46eba6f0560fd15821dd0b1b9e51cc038da2f7"
+  integrity sha512-SEj9chf/zGKE6uqv6ImpWdKpdvj7l6hZitXRCfbbzOBc3ogi/MT3iQsoF/j4ZQGsB79UI0qX5DqxzNRcj7QY9g==
 
-"@flair-sdk/ipfs@^2.27.5":
-  version "2.27.5"
-  resolved "https://registry.yarnpkg.com/@flair-sdk/ipfs/-/ipfs-2.27.5.tgz#fc2c40f756801db5d7109e2ad05135919a825f79"
-  integrity sha512-RdtkEkMp0vimEwKr6Vpq+P85U/hG3XCuwRH57Ac9aJSY3qQHyzfstsA7ojEFz6ZO++MZJntdkwPYmCBEgxwQ8Q==
+"@flair-sdk/ipfs@^2.30.0":
+  version "2.30.0"
+  resolved "https://registry.yarnpkg.com/@flair-sdk/ipfs/-/ipfs-2.30.0.tgz#a7bb181a49fadbd0daac3d57a88082d131ee88e8"
+  integrity sha512-0iUu5/RDYi/UtRNdv4yNYiYEvUwiK7+iyRVvSGfUw3zGEI8SdgZUr8AG2POUJ8qYXEptO63dtLQKxD1Ruk5Jew==
   dependencies:
-    "@flair-sdk/common" "^2.27.5"
+    "@flair-sdk/common" "^2.30.0"
     axios "^0.26.1"
     ethers "^5.6.5"
 
-"@flair-sdk/metatx@^2.27.5":
-  version "2.27.5"
-  resolved "https://registry.yarnpkg.com/@flair-sdk/metatx/-/metatx-2.27.5.tgz#ca4a07b97d1a00c7ff657c528b1a51db7cb87970"
-  integrity sha512-WSuEfsE9aVGuxBiBA2EXa2y8+GSUNnlwvLI+fiB9QMWS+sNSNrppq21BSPia2mO3SWr2cvyT8Vx9W0PQ7eKTYA==
+"@flair-sdk/metatx@^2.30.0":
+  version "2.30.0"
+  resolved "https://registry.yarnpkg.com/@flair-sdk/metatx/-/metatx-2.30.0.tgz#fb5c37b40af633863a7e99276e2e7b2c3d6a8e6e"
+  integrity sha512-m1NGvj0uPp3n0pcKc7cFmG9nhRAa8d9NE22Uf+7y99QpnubX2xTUp8PUIWD8+BM1U4dGlE/CuZRW5rML68aLqg==
   dependencies:
-    "@flair-sdk/common" "^2.27.5"
-    "@flair-sdk/registry" "^2.27.5"
+    "@flair-sdk/common" "^2.30.0"
+    "@flair-sdk/registry" "^2.30.0"
     axios "^0.26.1"
     ethers "^5.6.5"
     randombytes "^2.1.0"
     utility-types "^3.10.0"
 
-"@flair-sdk/react@^2.27.5":
-  version "2.27.5"
-  resolved "https://registry.yarnpkg.com/@flair-sdk/react/-/react-2.27.5.tgz#5496d5c70e602d18d26f895e7e7701ab98c56a19"
-  integrity sha512-/VbcGXfD267N3nPIip/HYLy5XHM48WYMyAFBsofZsa3Xxj0bsOQ89qh82a7kobQ2kCQ72zbsomdV7NHQ+U3Gew==
+"@flair-sdk/react@^2.30.0":
+  version "2.30.0"
+  resolved "https://registry.yarnpkg.com/@flair-sdk/react/-/react-2.30.0.tgz#b114e63b2bbcb2e763508696747c9ba82d3c0c58"
+  integrity sha512-jJkX8HuTN45jhy5s++ZNaPJodPOioGhMbwlf4IZh7k30MMd60KqQoCNEge4B7j+tCk1N1TwQdy4Axtu2oOqnqQ==
   dependencies:
-    "@flair-sdk/common" "^2.27.5"
-    "@flair-sdk/icons" "^2.27.5"
-    "@flair-sdk/ipfs" "^2.27.5"
-    "@flair-sdk/metatx" "^2.27.5"
-    "@flair-sdk/registry" "^2.27.5"
+    "@flair-sdk/common" "^2.30.0"
+    "@flair-sdk/icons" "^2.30.0"
+    "@flair-sdk/ipfs" "^2.30.0"
+    "@flair-sdk/metatx" "^2.30.0"
+    "@flair-sdk/registry" "^2.30.0"
     "@gnosis.pm/safe-apps-wagmi" "^1.0.3"
     "@headlessui/react" "^1.7.2"
     "@heroicons/react" "^1.0.6"
@@ -783,18 +783,26 @@
     versioning "^1.1.2"
     wagmi "^0.6.7"
 
-"@flair-sdk/registry@^2.27.5":
-  version "2.27.5"
-  resolved "https://registry.yarnpkg.com/@flair-sdk/registry/-/registry-2.27.5.tgz#00558b19a252161459bf74c43f38bbbcf736b34e"
-  integrity sha512-UNqP/s/YjUmsG1pUyh/VQBo49+QeiJ/l1Hgza7/nthZ7zGvisAvgYUdqPG5XNM1ebEhx1SSliO8mAzxJn07v0g==
+"@flair-sdk/registry@^2.30.0":
+  version "2.30.0"
+  resolved "https://registry.yarnpkg.com/@flair-sdk/registry/-/registry-2.30.0.tgz#94de901c2c853552be313bda70b423d1620f8f57"
+  integrity sha512-ALYZiiYtrVxT/L6GbokTGiCdG9CtqPHE/z9aaQetet5VvuN5mytCulEMSuZG54yBKlRFD9pTlDmbhSVCrdl62g==
   dependencies:
     axios "^0.27.2"
     ethers "^5.6.5"
 
-"@gnosis.pm/safe-apps-provider@^0.13.0", "@gnosis.pm/safe-apps-provider@^0.13.1":
+"@gnosis.pm/safe-apps-provider@^0.13.1":
   version "0.13.2"
   resolved "https://registry.yarnpkg.com/@gnosis.pm/safe-apps-provider/-/safe-apps-provider-0.13.2.tgz#b4963c51e2ae5e86198c7ca42248ab4d97355919"
   integrity sha512-n/sd6Nq7Kg1ZRSB4zMy7lFV+5R5ZXFKd2ZtvIq0cBvkTM9K2sDNhqTE1Em2uy0hM5wKdWlTfJtwh6YkWVhoXDg==
+  dependencies:
+    "@gnosis.pm/safe-apps-sdk" "7.8.0"
+    events "^3.3.0"
+
+"@gnosis.pm/safe-apps-provider@^0.14.0":
+  version "0.14.0"
+  resolved "https://registry.yarnpkg.com/@gnosis.pm/safe-apps-provider/-/safe-apps-provider-0.14.0.tgz#52783800f1da5f1b633a42dcf8c8797e7fe31d99"
+  integrity sha512-qOkPUfIu9dLoy4Muo40xzswqix7ZoJDmtEl35D+oYYa6JDw8cr4tVkPPjl6eDPNtMLiqGjs1POzHdZrfC8aHVw==
   dependencies:
     "@gnosis.pm/safe-apps-sdk" "7.8.0"
     events "^3.3.0"
@@ -808,11 +816,11 @@
     ethers "^5.6.8"
 
 "@gnosis.pm/safe-apps-wagmi@^1.0.3":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@gnosis.pm/safe-apps-wagmi/-/safe-apps-wagmi-1.0.3.tgz#5da2b7ba67e8b1b2bb19760df480ab9e81212e66"
-  integrity sha512-UKzO/+7hRitjAr5uHqPXNzY1s5JV0y5aheLEpGQQlDEg42EMflo2nm+K4NV+S0mrgnTPW+/kk00sv8FuQqaFjA==
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@gnosis.pm/safe-apps-wagmi/-/safe-apps-wagmi-1.0.4.tgz#8d6076a8fddcfc1d9c1d8c39ef9f433ae8e111ab"
+  integrity sha512-D0jJLhhJO6WmWl47UBmHS8PBvStLTM2mHobtUdwJHNK//4sTStrmQ2RexUhzbvbEimFfEXKJOexTN66z/slHpQ==
   dependencies:
-    "@gnosis.pm/safe-apps-provider" "^0.13.0"
+    "@gnosis.pm/safe-apps-provider" "^0.14.0"
     "@gnosis.pm/safe-apps-sdk" "^7.7.0"
 
 "@gnosis.pm/safe-react-gateway-sdk@^3.1.3":
@@ -1168,7 +1176,12 @@
   resolved "https://registry.yarnpkg.com/@types/minimist/-/minimist-1.2.2.tgz#ee771e2ba4b3dc5b372935d549fd9617bf345b8c"
   integrity sha512-jhuKLIRrhvCPLqwPcx6INqmKeiA5EWrsCOPhrlFSrbrmU4ZMPjj5Ul/oLCMDO98XRUIwVm78xICz4EPCektzeQ==
 
-"@types/node@*", "@types/node@18.8.3":
+"@types/node@*":
+  version "18.8.4"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.8.4.tgz#54be907698f40de8a45770b48486aa3cbd3adff7"
+  integrity sha512-WdlVphvfR/GJCLEMbNA8lJ0lhFNBj4SW3O+O5/cEGw9oYrv0al9zTwuQsq+myDUXgNx2jgBynoVgZ2MMJ6pbow==
+
+"@types/node@18.8.3":
   version "18.8.3"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-18.8.3.tgz#ce750ab4017effa51aed6a7230651778d54e327c"
   integrity sha512-0os9vz6BpGwxGe9LOhgP/ncvYN5Tx1fNcd2TM3rD/aCGBkysb+ZWpXEocG24h6ZzOi13+VB8HndAQFezsSOw1w==
@@ -2425,9 +2438,9 @@ eip1193-provider@1.0.1:
     "@json-rpc-tools/provider" "^1.5.5"
 
 electron-to-chromium@^1.4.251:
-  version "1.4.276"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.276.tgz#17837b19dafcc43aba885c4689358b298c19b520"
-  integrity sha512-EpuHPqu8YhonqLBXHoU6hDJCD98FCe6KDoet3/gY1qsQ6usjJoHqBH2YIVs8FXaAtHwVL8Uqa/fsYao/vq9VWQ==
+  version "1.4.277"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.277.tgz#6dc3d9724a0a19b7ab155bf8e37967357a081dc5"
+  integrity sha512-Ej4VyUfGdVY5D2J5WHAVNqrEFBKgeNcX7p/bBQU4x/VKwvnyEvGd62NEkIK3lykLEe9Cg4MCcoWAa+u97o0u/A==
 
 elliptic@6.5.4, elliptic@^6.4.0, elliptic@^6.5.2, elliptic@^6.5.4:
   version "6.5.4"
