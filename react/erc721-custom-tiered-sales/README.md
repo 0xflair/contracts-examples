@@ -39,10 +39,10 @@ The main difference between this example and [custom-tiered-sales](../custom-tie
 
 To use this example within your app:
 
-1. Install `flair-sdk` in your React app:
+1. Install `@flair-sdk/react` in your React app:
 
    ```sh
-   npm install flair-sdk
+   npm install @flair-sdk/react
    ```
 
 2. Configure FlairProvider around your root App:

@@ -4,7 +4,7 @@ This repository contains example usage of Flair SDK in various frameworks and la
 
 ### What is Flair?
 
-[Flair](https://flair.finance) provides open-source building blocks to integrate NFTs and Web3 in your project, fully trustless and in your ownership.
+[Flair](https://flair.dev) provides open-source building blocks to integrate NFTs and Web3 in your project, fully trustless and in your ownership.
 
 > with Flair you don't re-invent the wheel.
 
