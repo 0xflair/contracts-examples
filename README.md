@@ -10,12 +10,24 @@ This repository contains example usage of Flair SDK in various frameworks and la
 
 ## Examples
 
-| Framework | Name                                                           | Description                                                                   | Use Cases                                                                                                     |
-| --------- | -------------------------------------------------------------- | ----------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| Next.js   | [simple-wallet-integration](next.js/simple-wallet-integration) | Connect button with popular connectors and customizable styling.              | To use [wagmi.sh](https://github.com/wagmi-dev/wagmi) with already configured connectors and wallet dropdown. |
-| Next.js   | [custom-tiered-sales](next.js/custom-tiered-sales)             | Custom Sales components on your own app                                       | e.g. To style your ERC721 or ERC1155 NFT sales in your own website.                                           |
-| React     | [simple-wallet-integration](react/simple-wallet-integration)   | Connect button with popular connectors and customizable styling (in ReactJS). | To use [wagmi.sh](https://github.com/wagmi-dev/wagmi) with already configured connectors and wallet dropdown. |
-| React     | [custom-tiered-sales](react/custom-tiered-sales)               | Custom Sales components on your own app                                       | e.g. To style your ERC721 or ERC1155 NFT sales in your own website.                                           |
+### Next.js
+
+| Name                                                           | Description                                                                   | Use Cases                                                                                                     |
+| -------------------------------------------------------------- | ----------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| [simple&#x2011;wallet&#x2011;integration](next.js/simple-wallet-integration) | Connect button with popular connectors and customizable styling.              | To use [wagmi.sh](https://github.com/wagmi-dev/wagmi) with already configured connectors and wallet dropdown. |
+| [custom&#x2011;tiered&#x2011;sales](next.js/custom-tiered-sales)             | Custom Sales components on your own app                                       | e.g. To style your ERC721 or ERC1155 NFT sales in your own website.                                           |
+
+### React
+| Name                                                           | Description                                                                   | Use Cases                                                                                                     |
+| -------------------------------------------------------------- | ----------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| [simple&#x2011;wallet&#x2011;integration](react/simple-wallet-integration)   | Connect button with popular connectors and customizable styling (in ReactJS). | To use [wagmi.sh](https://github.com/wagmi-dev/wagmi) with already configured connectors and wallet dropdown. |
+| [custom&#x2011;tiered-sales](react/custom-tiered-sales)               | Custom Sales components on your own app                                       | e.g. To style your ERC721 or ERC1155 NFT sales in your own website.                                           |
+
+### Express
+
+| Name                                                                 | Description                                                                 | Use Cases                                                                                                     |
+| -------------------------------------------------------------------- | --------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| [mint&#x2011;erc721&#x2011;with&#x2011;metadata](express/mint-erc721-with-metadata)       | Mint ERC721 NFTs with metadata from your backend                             | e.g. To mint NFTs after an in-game action from your backend.                         |
 
 <!--                                                                                                     | [react / custom-tiered-sales](react/custom-tiered-sales)                             | Custom NFT Minting Sales page on your own app                                                                     | e.g. To use give your users a native minting experience with your own styling. |
 | [react / community-airdrop-reward-stream](react/custom-tiered-sales)                                | Airdrop ERC20 rewards to your NFT community.                                                   | e.g. To reward long-term holders of your NFTs with a credit token or your own gaming token.                       |
