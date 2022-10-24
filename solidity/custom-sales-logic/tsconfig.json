@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "es6",
-    "lib": ["esnext"],
+    "lib": ["ESNext"],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
