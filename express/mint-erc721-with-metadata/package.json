@@ -11,7 +11,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@flair-sdk/contracts": "^2.20.2",
+    "@flair-sdk/contracts": "^2.20.3",
     "@flair-sdk/ipfs": "^2.37.0",
     "@flair-sdk/metatx": "^2.37.0",
     "dotenv": "^16.0.1",
