@@ -713,10 +713,10 @@
     "@wagmi/core" "^0.4.9"
     magic-sdk "^8.1.1"
 
-"@flair-sdk/common@^2.36.3":
-  version "2.36.3"
-  resolved "https://registry.yarnpkg.com/@flair-sdk/common/-/common-2.36.3.tgz#e85995367883d8bb4d4030ef075c110f9d44a6a3"
-  integrity sha512-PK/hn66JjEKpYzv/ufBgcbh4aLAp/P/6eebCcgWKFvvB31qa1mWqlP76xRVNpOuhobBWRTtkMVdhw73NYOE5MQ==
+"@flair-sdk/common@^2.37.0":
+  version "2.37.0"
+  resolved "https://registry.yarnpkg.com/@flair-sdk/common/-/common-2.37.0.tgz#73b70cd6466a8277c702297ff63cf97ea2557728"
+  integrity sha512-EECWv6Y3xiauynwNlrndxEpLr8ZhlUgn32d6UQhH50NP1ZqTpO9yz+RkmgaUDVPT3MS21t/YW5TWM7iM4oUdRQ==
   dependencies:
     "@everipedia/wagmi-magic-connector" "^0.6.5"
     "@gnosis.pm/safe-apps-provider" "^0.13.1"
@@ -724,42 +724,42 @@
     "@wagmi/core" "^0.5.7"
     ethers "^5.6.5"
 
-"@flair-sdk/icons@^2.36.3":
-  version "2.36.3"
-  resolved "https://registry.yarnpkg.com/@flair-sdk/icons/-/icons-2.36.3.tgz#cfc01790d51a3a642a6f3115548101f196ad151b"
-  integrity sha512-iMXiQtEQsHHA2Wr21Om1xUYEgkQn9B6qgONFSED+0Q62Qgj5C+JkaH2bGsiMY6lyhhJR59okET+Pm55R+aWfdw==
+"@flair-sdk/icons@^2.37.0":
+  version "2.37.0"
+  resolved "https://registry.yarnpkg.com/@flair-sdk/icons/-/icons-2.37.0.tgz#bb0f4c6778b579631e600377275d1104a71871c1"
+  integrity sha512-+jYKy6OPC66o/YUu3IMqkYFsQqVasJ/OMrwvBnaQJoWphyIe+kUGd5D2oFarT5H1rnRNdmOyq6Z9IhXPEbFfzQ==
 
-"@flair-sdk/ipfs@^2.36.3":
-  version "2.36.3"
-  resolved "https://registry.yarnpkg.com/@flair-sdk/ipfs/-/ipfs-2.36.3.tgz#e8ac2657a39f19840daa5a79acad71b9a7c037c3"
-  integrity sha512-4lOaRabaydiYYZkymBOXAw0frk0wKAS7EJ42PlhVUx/kFo88hQ1BnrPbmeNiIZQz5iMRQzklm3c4ymAgjC5RAA==
+"@flair-sdk/ipfs@^2.37.0":
+  version "2.37.0"
+  resolved "https://registry.yarnpkg.com/@flair-sdk/ipfs/-/ipfs-2.37.0.tgz#4850e324f500966e18ae0432c09a7ebc5356c7b1"
+  integrity sha512-b7/axsi4o8XEQdAPJTmgTHZKt+cbYwZRSSu0ttZxSB6WfpJMNwOvfZ8TZ2oBBocgKkfBOuurBEPaWa1YtrRTvQ==
   dependencies:
-    "@flair-sdk/common" "^2.36.3"
+    "@flair-sdk/common" "^2.37.0"
     axios "^0.26.1"
     ethers "^5.6.5"
 
-"@flair-sdk/metatx@^2.36.3":
-  version "2.36.3"
-  resolved "https://registry.yarnpkg.com/@flair-sdk/metatx/-/metatx-2.36.3.tgz#e017e7b277fc7253cfe76fbcc09fae8d3c22642d"
-  integrity sha512-nyCfMrg0IkIsxX3+gMjzxD8l0/digTdMk88vyb+BRq4LDLH4U+FmfMkwsL7w7J3vzib64Ui+nl8LFEtj4fL2Zw==
+"@flair-sdk/metatx@^2.37.0":
+  version "2.37.0"
+  resolved "https://registry.yarnpkg.com/@flair-sdk/metatx/-/metatx-2.37.0.tgz#17d957c8f4cf75a28f1f81186e2f39c37e1100b2"
+  integrity sha512-v2GH+hwHxqvx97NDKW9irAQVsbW5SgLGDd/BHOlQS8IHlXRH1AWet3MXUCLSovkSOE5gvGCz2ksxiuLS9t4fkA==
   dependencies:
-    "@flair-sdk/common" "^2.36.3"
-    "@flair-sdk/registry" "^2.36.3"
+    "@flair-sdk/common" "^2.37.0"
+    "@flair-sdk/registry" "^2.37.0"
     axios "^0.26.1"
     ethers "^5.6.5"
     randombytes "^2.1.0"
     utility-types "^3.10.0"
 
-"@flair-sdk/react@^2.36.3":
-  version "2.36.3"
-  resolved "https://registry.yarnpkg.com/@flair-sdk/react/-/react-2.36.3.tgz#02cc8fcc2d38e72bb9e8b0f5c1181c7657b6b8d4"
-  integrity sha512-8Tj3lbj5uiDb5tyWv5SCMDW/KF425ppsr1lDwD4V604vxHRh4S4L8d4H20mh4UpB+LjqBdCa68jt/N3Q6uvxww==
+"@flair-sdk/react@^2.37.0":
+  version "2.37.0"
+  resolved "https://registry.yarnpkg.com/@flair-sdk/react/-/react-2.37.0.tgz#c72f799a6f14747c92decbbec22be6a7ba211aac"
+  integrity sha512-u/dterZoFANx7vHxqGGzEP+yDtOOzYP0MrxgXczo1W/dd3qgJcrEA2LH4dOTad8zWoOe678hsxQM0v1OwNvbwQ==
   dependencies:
-    "@flair-sdk/common" "^2.36.3"
-    "@flair-sdk/icons" "^2.36.3"
-    "@flair-sdk/ipfs" "^2.36.3"
-    "@flair-sdk/metatx" "^2.36.3"
-    "@flair-sdk/registry" "^2.36.3"
+    "@flair-sdk/common" "^2.37.0"
+    "@flair-sdk/icons" "^2.37.0"
+    "@flair-sdk/ipfs" "^2.37.0"
+    "@flair-sdk/metatx" "^2.37.0"
+    "@flair-sdk/registry" "^2.37.0"
     "@gnosis.pm/safe-apps-wagmi" "^1.0.3"
     "@headlessui/react" "^1.7.2"
     "@heroicons/react" "^1.0.6"
@@ -784,10 +784,10 @@
     versioning "^1.1.2"
     wagmi "^0.6.7"
 
-"@flair-sdk/registry@^2.36.3":
-  version "2.36.3"
-  resolved "https://registry.yarnpkg.com/@flair-sdk/registry/-/registry-2.36.3.tgz#18cbf015f41ba71075b0450d481e3470fcdd8a89"
-  integrity sha512-+XFwFk4dpLpP9/S8klWK0SPXZEFI3AHIDl3UKYCaHIoZcwLDm1AAmAcuiPIG5go7pZiwFvycaewYajoSfhTMlQ==
+"@flair-sdk/registry@^2.37.0":
+  version "2.37.0"
+  resolved "https://registry.yarnpkg.com/@flair-sdk/registry/-/registry-2.37.0.tgz#154f3a86ce486f606790085eda291ca554dcff8d"
+  integrity sha512-Z9dB2gzmN/QIrOWaIRklBs3GoHoy4IQ4rLm+C352GOVECX0Oj3KKTl1/gNaNsFNYpPde6BfeB5ZPh+AHMp22kw==
   dependencies:
     axios "^0.27.2"
     ethers "^5.6.5"
