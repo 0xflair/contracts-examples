@@ -11,7 +11,7 @@ dotenv.config();
  *  - "flair-sdk" provides a contract object with ability to submit meta transactions.
  */
 import { Wallet } from "ethers";
-import {  ERC721MintableRoleBasedERC2771__factory, ContractsManifests } from "@flair-sdk/contracts";
+import { ERC721MintableRoleBasedERC2771__factory, ContractsManifests } from "@flair-sdk/contracts";
 import { IpfsClient } from "@flair-sdk/ipfs";
 import { augmentContractWithMetaTransactions } from "@flair-sdk/metatx";
 
@@ -114,8 +114,12 @@ app.get(
 const port = 8080;
 
 app.listen(port, () => {
+  console.log(``);
   console.log(`Flair SDK Example - Mint 1-of-1 NFTs via Meta Transactions!`);
+  console.log(``);
   console.log(`- Listening on port ${port}`);
+  console.log(`- Sending tx via forwarder: ${forwarderAddress}`);
+  console.log(`   (Make sure it's same as your contract trusted forwarder)`);
   console.log(``);
   console.log(`Now you can mint NFTs by opening: http://localhost:${port}/mint`);
 });
