@@ -34,12 +34,12 @@ function App() {
     "w-full bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed";
 
   return (
-    <div className="flex items-center justify-center min-h-screen">
+    <div className="mx-auto mt-8 max-w-5xl px-4 pb-12 sm:px-6 lg:px-8 flex flex-col gap-12 justify-start">
       <TieredSalesProvider
         chainId={Number(chainId)}
         contractAddress={contractAddress}
       >
-        <main className="h-fit max-w-2xl min-w-xl mx-auto lg:max-w-5xl flex flex-col gap-8 items-center p-4">
+        <main className="h-fit mx-auto max-w-xl w-full flex flex-col gap-8 items-center p-4">
           {/* Sales Title */}
           <div className="flex flex-col gap-4 items-center justify-between">
             <h2 className="font-bold text-2xl">My Amazing NFT</h2>
@@ -51,7 +51,7 @@ function App() {
           <main className="flex flex-col gap-y-8">
             {/* Tier Selector */}
             <div className="flex gap-2 items-center justify-center">
-              <TieredSalesSelector />
+              <TieredSalesSelector titleClassName="pb-4" />
             </div>
 
             <div>
