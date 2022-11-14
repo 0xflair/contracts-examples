@@ -6,7 +6,6 @@
     "start": "next start"
   },
   "dependencies": {
-    "@flair-sdk/react": "^2.42.6",
     "next": "latest",
     "react": "18.1.0",
     "react-dom": "18.1.0"

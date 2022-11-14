@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@coinbase/wallet-sdk": "^3.5.3",
-    "@flair-sdk/react": "^2.42.6",
+    "@flair-sdk/react": "^2.46.2",
     "@tanstack/query-sync-storage-persister": "4.13.4",
     "@tanstack/react-query": "4.13.4",
     "@tanstack/react-query-persist-client": "4.13.4",
