@@ -17,6 +17,8 @@ import {
   TieredSalesSelector,
   ERC721TotalSupply,
   ERC721MaxSupply,
+  TieredSalesIfNotSoldOut,
+  TieredSalesIfSoldOut
 } from "@flair-sdk/react";
 
 import React, { useState } from "react";
@@ -40,7 +42,7 @@ function App() {
         chainId={Number(chainId)}
         contractAddress={contractAddress}
       >
-        <main className="h-fit w-full max-w-2xl min-w-xl mx-auto lg:max-w-5xl flex flex-col gap-8 items-center p-4">
+        <main className="h-fit mx-auto max-w-xl w-full flex flex-col gap-8 items-center p-4">
           {/* Sales Title */}
           <div className="flex flex-col gap-4 items-center justify-between">
             <h2 className="font-bold text-2xl">My Amazing NFT</h2>
@@ -52,77 +54,75 @@ function App() {
           <main className="flex flex-col gap-y-8">
             {/* Tier Selector */}
             <div className="flex gap-2 items-center justify-center">
-              <TieredSalesSelector />
+              <TieredSalesSelector titleClassName="pb-4" />
             </div>
 
-            {/* Sale Info */}
             <div>
-              {/* Price */}
-              <div className="flex gap-2 items-center justify-center">
-                <TieredSalesPrice
-                  showPrice={true}
-                  className="text-lg font-medium text-gray-900 whitespace-nowrap"
-                />
-              </div>
-
-              {/* Status and Supply Counter */}
+              {/* Sale Status and Price */}
               <div className="mt-4 flex gap-4 justify-between">
-                <div className="flex flex-col flex-wrap sm:flex-row sm:items-center gap-4">
-                  <TieredSalesStatus />
+                <TieredSalesIfNotSoldOut>
+                  <div className="flex flex-col flex-wrap sm:flex-row sm:items-center gap-4">
+                    <TieredSalesStatus />
+                    {isConnected && <TieredSalesAllowlistStatus />}
+                  </div>
+                </TieredSalesIfNotSoldOut>
 
-                  {isConnected && <TieredSalesAllowlistStatus />}
-                </div>
-
-                <div className="inline-block rounded-full bg-gray-100 px-4 py-2 text-center">
-                  <ERC721TotalSupply
-                    chainId={chainId}
-                    contractAddress={contractAddress}
-                  />{" "}
-                  /{" "}
-                  <ERC721MaxSupply
-                    chainId={chainId}
-                    contractAddress={contractAddress}
-                  />
-                </div>
+                <TieredSalesPrice className="text-xl font-medium text-gray-900 whitespace-nowrap" />
               </div>
             </div>
 
-            {/* Mint Widget */}
             <div>
               <div>
-                <div className="mb-4">
-                  <div className="flex items-center justify-between">
-                    <h2 className="text-sm font-medium text-gray-900">
-                      How many to mint?
-                    </h2>
-                  </div>
-
-                  <fieldset className="mt-4">
-                    <legend className="sr-only">Choose number of mints</legend>
-                    <div className="flex">
-                      <TieredSalesMintInput
-                        mintCount={mintCount}
-                        setMintCount={setMintCount}
-                        className="appearance-none min-w-0 w-full bg-white border border-gray-300 rounded-md shadow-sm py-2 px-4 text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 disabled:opacity-75"
-                      />
+                {/* Mint Count */}
+                <TieredSalesIfNotSoldOut>
+                  <div className="mb-4">
+                    <div className="flex items-center justify-between">
+                      <h2 className="text-sm font-medium text-gray-900">
+                        How many to mint?
+                      </h2>
                     </div>
-                  </fieldset>
-                </div>
+
+                    <fieldset className="mt-4">
+                      <legend className="sr-only">Choose number of mints</legend>
+                      <div className="flex">
+                        <TieredSalesMintInput
+                          mintCount={mintCount}
+                          setMintCount={setMintCount}
+                          className="appearance-none min-w-0 w-full bg-white border border-gray-300 rounded-md shadow-sm py-2 px-4 text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 disabled:opacity-75"
+                        />
+                      </div>
+                    </fieldset>
+                    </div>
+                  </TieredSalesIfNotSoldOut>
 
                 {/* Mint Button */}
-                <ConnectButton className={mintButtonClass}>
-                  <div className="flex gap-3 items-center">
-                    <SwitchChainButton
-                      requiredChainId={Number(chainId)}
-                      className={mintButtonClass}
-                    >
-                      <TieredSalesMintButton
-                        mintCount={mintCount}
+                <TieredSalesIfNotSoldOut>
+                  <ConnectButton className={mintButtonClass}>
+                    <div className="flex gap-3 items-center">
+                      <SwitchChainButton
+                        requiredChainId={Number(chainId)}
                         className={mintButtonClass}
-                      />
-                    </SwitchChainButton>
+                      >
+                        <TieredSalesMintButton
+                          mintCount={mintCount}
+                          className={mintButtonClass}
+                        />
+                      </SwitchChainButton>
+                    </div>
+                    </ConnectButton>
+                </TieredSalesIfNotSoldOut>
+                
+                <TieredSalesIfSoldOut>
+                  <div className="border-l-4 border-green-400 bg-green-50 p-4">
+                    <div className="flex">
+                      <div>
+                        <p className="text-sm text-green-700">
+                          Sold Out 🎉{' '}
+                        </p>
+                      </div>
+                    </div>
                   </div>
-                </ConnectButton>
+                </TieredSalesIfSoldOut>
 
                 {/* Maximum Eligible Amount */}
                 <IfWalletConnected>
@@ -142,7 +142,9 @@ function App() {
               </div>
 
               {/* Transaction Status Bar */}
-              <TieredSalesMintStatusBar className="mt-4 flex flex-col gap-2" />
+              <TieredSalesIfNotSoldOut>
+                <TieredSalesMintStatusBar className="mt-4 flex flex-col gap-2" />
+              </TieredSalesIfNotSoldOut>
             </div>
           </main>
         </main>
