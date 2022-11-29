@@ -17,6 +17,8 @@ import {
   TieredSalesSelector,
   ERC721TotalSupply,
   ERC721MaxSupply,
+  TieredSalesIfNotSoldOut,
+  TieredSalesIfSoldOut
 } from "@flair-sdk/react";
 
 import React, { useState } from "react";
@@ -67,11 +69,12 @@ function App() {
 
               {/* Status and Supply Counter */}
               <div className="mt-4 flex gap-4 justify-between">
-                <div className="flex flex-col flex-wrap sm:flex-row sm:items-center gap-4">
-                  <TieredSalesStatus />
-
-                  {isConnected && <TieredSalesAllowlistStatus />}
-                </div>
+                <TieredSalesIfNotSoldOut>
+                  <div className="flex flex-col flex-wrap sm:flex-row sm:items-center gap-4">
+                    <TieredSalesStatus />
+                    {isConnected && <TieredSalesAllowlistStatus />}
+                  </div>
+                </TieredSalesIfNotSoldOut>
 
                 <div className="inline-block rounded-full bg-gray-100 px-4 py-2 text-center">
                   <ERC721TotalSupply
@@ -90,39 +93,55 @@ function App() {
             {/* Mint Widget */}
             <div>
               <div>
-                <div className="mb-4">
-                  <div className="flex items-center justify-between">
-                    <h2 className="text-sm font-medium text-gray-900">
-                      How many to mint?
-                    </h2>
-                  </div>
-
-                  <fieldset className="mt-4">
-                    <legend className="sr-only">Choose number of mints</legend>
-                    <div className="flex">
-                      <TieredSalesMintInput
-                        mintCount={mintCount}
-                        setMintCount={setMintCount}
-                        className="appearance-none min-w-0 w-full bg-white border border-gray-300 rounded-md shadow-sm py-2 px-4 text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 disabled:opacity-75"
-                      />
+                <TieredSalesIfNotSoldOut>
+                  <div className="mb-4">
+                    <div className="flex items-center justify-between">
+                      <h2 className="text-sm font-medium text-gray-900">
+                        How many to mint?
+                      </h2>
                     </div>
-                  </fieldset>
-                </div>
+
+                    <fieldset className="mt-4">
+                      <legend className="sr-only">Choose number of mints</legend>
+                      <div className="flex">
+                        <TieredSalesMintInput
+                          mintCount={mintCount}
+                          setMintCount={setMintCount}
+                          className="appearance-none min-w-0 w-full bg-white border border-gray-300 rounded-md shadow-sm py-2 px-4 text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 disabled:opacity-75"
+                        />
+                      </div>
+                    </fieldset>
+                    </div>
+                </TieredSalesIfNotSoldOut>
 
                 {/* Mint Button */}
-                <ConnectButton className={mintButtonClass}>
-                  <div className="flex gap-3 items-center">
-                    <SwitchChainButton
-                      requiredChainId={Number(chainId)}
-                      className={mintButtonClass}
-                    >
-                      <TieredSalesMintButton
-                        mintCount={mintCount}
+                <TieredSalesIfNotSoldOut>
+                  <ConnectButton className={mintButtonClass}>
+                    <div className="flex gap-3 items-center">
+                      <SwitchChainButton
+                        requiredChainId={Number(chainId)}
                         className={mintButtonClass}
-                      />
-                    </SwitchChainButton>
+                      >
+                        <TieredSalesMintButton
+                          mintCount={mintCount}
+                          className={mintButtonClass}
+                        />
+                      </SwitchChainButton>
+                    </div>
+                  </ConnectButton>
+                </TieredSalesIfNotSoldOut>
+
+                <TieredSalesIfSoldOut>
+                  <div className="border-l-4 border-green-400 bg-green-50 p-4">
+                    <div className="flex">
+                      <div>
+                        <p className="text-sm text-green-700">
+                          Sold Out 🎉{' '}
+                        </p>
+                      </div>
+                    </div>
                   </div>
-                </ConnectButton>
+                </TieredSalesIfSoldOut>
 
                 {/* Maximum Eligible Amount */}
                 <IfWalletConnected>
@@ -142,7 +161,9 @@ function App() {
               </div>
 
               {/* Transaction Status Bar */}
-              <TieredSalesMintStatusBar className="mt-4 flex flex-col gap-2" />
+              <TieredSalesIfNotSoldOut>
+                <TieredSalesMintStatusBar className="mt-4 flex flex-col gap-2" />
+              </TieredSalesIfNotSoldOut>
             </div>
           </main>
         </main>

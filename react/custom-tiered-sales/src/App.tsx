@@ -59,14 +59,12 @@ function App() {
             <div>
               {/* Sale Status and Price */}
               <div className="mt-4 flex gap-4 justify-between">
-                <div className="flex flex-col flex-wrap sm:flex-row sm:items-center gap-4">
-
-                  <TieredSalesIfNotSoldOut>
+                <TieredSalesIfNotSoldOut>
+                  <div className="flex flex-col flex-wrap sm:flex-row sm:items-center gap-4">
                     <TieredSalesStatus />
-                  </TieredSalesIfNotSoldOut>
-
-                  {isConnected && <TieredSalesAllowlistStatus />}
-                </div>
+                    {isConnected && <TieredSalesAllowlistStatus />}
+                  </div>
+                </TieredSalesIfNotSoldOut>
 
                 <TieredSalesPrice className="text-xl font-medium text-gray-900 whitespace-nowrap" />
               </div>
