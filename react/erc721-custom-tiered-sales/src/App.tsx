@@ -42,7 +42,7 @@ function App() {
         chainId={Number(chainId)}
         contractAddress={contractAddress}
       >
-        <main className="h-fit w-full max-w-2xl min-w-xl mx-auto lg:max-w-5xl flex flex-col gap-8 items-center p-4">
+        <main className="h-fit mx-auto max-w-xl w-full flex flex-col gap-8 items-center p-4">
           {/* Sales Title */}
           <div className="flex flex-col gap-4 items-center justify-between">
             <h2 className="font-bold text-2xl">My Amazing NFT</h2>
@@ -54,20 +54,11 @@ function App() {
           <main className="flex flex-col gap-y-8">
             {/* Tier Selector */}
             <div className="flex gap-2 items-center justify-center">
-              <TieredSalesSelector />
+              <TieredSalesSelector titleClassName="pb-4" />
             </div>
 
-            {/* Sale Info */}
             <div>
-              {/* Price */}
-              <div className="flex gap-2 items-center justify-center">
-                <TieredSalesPrice
-                  showPrice={true}
-                  className="text-lg font-medium text-gray-900 whitespace-nowrap"
-                />
-              </div>
-
-              {/* Status and Supply Counter */}
+              {/* Sale Status and Price */}
               <div className="mt-4 flex gap-4 justify-between">
                 <TieredSalesIfNotSoldOut>
                   <div className="flex flex-col flex-wrap sm:flex-row sm:items-center gap-4">
@@ -76,23 +67,13 @@ function App() {
                   </div>
                 </TieredSalesIfNotSoldOut>
 
-                <div className="inline-block rounded-full bg-gray-100 px-4 py-2 text-center">
-                  <ERC721TotalSupply
-                    chainId={chainId}
-                    contractAddress={contractAddress}
-                  />{" "}
-                  /{" "}
-                  <ERC721MaxSupply
-                    chainId={chainId}
-                    contractAddress={contractAddress}
-                  />
-                </div>
+                <TieredSalesPrice className="text-xl font-medium text-gray-900 whitespace-nowrap" />
               </div>
             </div>
 
-            {/* Mint Widget */}
             <div>
               <div>
+                {/* Mint Count */}
                 <TieredSalesIfNotSoldOut>
                   <div className="mb-4">
                     <div className="flex items-center justify-between">
@@ -112,7 +93,7 @@ function App() {
                       </div>
                     </fieldset>
                     </div>
-                </TieredSalesIfNotSoldOut>
+                  </TieredSalesIfNotSoldOut>
 
                 {/* Mint Button */}
                 <TieredSalesIfNotSoldOut>
@@ -128,9 +109,9 @@ function App() {
                         />
                       </SwitchChainButton>
                     </div>
-                  </ConnectButton>
+                    </ConnectButton>
                 </TieredSalesIfNotSoldOut>
-
+                
                 <TieredSalesIfSoldOut>
                   <div className="border-l-4 border-green-400 bg-green-50 p-4">
                     <div className="flex">
