@@ -9,4 +9,4 @@ artifacts
 cache-zk
 artifacts-zk
 
-dist
+dist.DS_Store
