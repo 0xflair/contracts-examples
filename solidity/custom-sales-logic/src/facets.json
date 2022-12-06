@@ -1,12 +1,15 @@
 {
   "my-amazing-team:sales/MyCustomTieredSales": {
     "addresses": {
-      "5": "0xB0b4Cf8587E2d983D17b1f9B448Bc9d80de78D07",
-      "goerli": "0xB0b4Cf8587E2d983D17b1f9B448Bc9d80de78D07"
+      "5": "0x2220b0f6B4D90147C5EcBf10C6Ff440e5AE22fa7",
+      "goerli": "0x2220b0f6B4D90147C5EcBf10C6Ff440e5AE22fa7"
     },
     "functionSelectors": [
+      "DEFAULT_ADMIN_ROLE()",
+      "MERCHANT_ROLE()",
       "eligibleForTier(uint256,address,uint256,bytes32[])",
       "mintByTier(uint256,uint256,uint256,bytes32[])",
+      "mintByTierByRole(address,uint256,uint256,uint256,bytes32[])",
       "onTierAllowlist(uint256,address,uint256,bytes32[])",
       "remainingForTier(uint256)",
       "reservedMints()",
@@ -19,7 +22,8 @@
     "fqn": "my-amazing-team:sales/MyCustomTieredSales",
     "version": "0.0.1",
     "providesInterfaces": [
-      "0x79f33254"
+      "0x79f33254",
+      "0x352a90bb"
     ],
     "peerDependencies": [],
     "requiredDependencies": [],
