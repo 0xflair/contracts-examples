@@ -1,8 +1,8 @@
 {
   "my-amazing-team:sales/MyCustomTieredSales": {
     "addresses": {
-      "5": "0x2220b0f6B4D90147C5EcBf10C6Ff440e5AE22fa7",
-      "goerli": "0x2220b0f6B4D90147C5EcBf10C6Ff440e5AE22fa7"
+      "5": "0xF150600F6851C020c3d7c0aB2E1ba1150Fc49106",
+      "goerli": "0xF150600F6851C020c3d7c0aB2E1ba1150Fc49106"
     },
     "functionSelectors": [
       "DEFAULT_ADMIN_ROLE()",

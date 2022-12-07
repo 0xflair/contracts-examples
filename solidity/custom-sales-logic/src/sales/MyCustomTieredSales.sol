@@ -119,6 +119,11 @@ contract MyCustomTieredSales is
         super._executeSalePrivileged(minter, tierId, count, maxAllowance, proof);
 
         IERC721MintableRoleBased(layout().targetERC721ContractAddress).mintByRole(_msgSender(), count);
-        IERC1155MintableRoleBased(layout().targetERC1155ContractAddress).mintByRole(_msgSender(), tierId, count, "");
+        IERC1155MintableRoleBased(layout().targetERC1155ContractAddress).mintByRole(
+            _msgSender(),
+            ERC1155TieredSalesStorage.layout().tierToTokenId[tierId],
+            count,
+            ""
+        );
     }
 }
