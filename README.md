@@ -30,6 +30,12 @@ This repository contains example usage of Flair SDK in various frameworks and la
 | ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
 | [mint&#x2011;erc721&#x2011;with&#x2011;metadata](express/mint-erc721-with-metadata) | Mint ERC721 NFTs with metadata from your backend, e.g. NFTs after an in-game action directly to user wallet. |
 
+### Solidity
+
+| Name                                                                                | Use Cases                                                                                                    |
+| ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| [custom&#x2011;sales&#x2011;logic](solidity/custom-sales-logic) | Create your own custom sales logic and take advantage of ready-made Flair's Tiered Sales mechanism. |
+
 ## Questions?
 
 Feel free to hop of Flair's Discord, our developers are happy to help you: [https://discord.gg/flair](https://discord.gg/flair)
