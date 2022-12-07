@@ -9,6 +9,7 @@ import "@flair-sdk/contracts/metatx/ERC2771ContextInternal.sol";
 import "@flair-sdk/contracts/access/roles/AccessControlInternal.sol";
 import "@flair-sdk/contracts/token/ERC721/facets/minting/IERC721MintableRoleBased.sol";
 import "@flair-sdk/contracts/token/ERC1155/facets/minting/IERC1155MintableRoleBased.sol";
+import "@flair-sdk/contracts/token/ERC1155/facets/sales/ERC1155TieredSalesStorage.sol";
 import "@openzeppelin/contracts/security/ReentrancyGuard.sol"; // TODO replace with diamond version
 
 /**
@@ -28,6 +29,8 @@ contract MyCustomTieredSales is
     ReentrancyGuard
 {
     using TieredSalesStorage for TieredSalesStorage.Layout;
+    using ERC1155TieredSalesStorage for ERC1155TieredSalesStorage.Layout;
+
     bytes32 public constant MERCHANT_ROLE = keccak256("MERCHANT_ROLE");
     bytes32 internal constant STORAGE_SLOT = keccak256("v1.my-amazing-team.contracts.storage.MyCustomTieredSales");
 
@@ -92,7 +95,12 @@ contract MyCustomTieredSales is
 
         // This is the custom logic for our project, which in this case is to mint from ERC721 and ERC1155 contracts.
         IERC721MintableRoleBased(layout().targetERC721ContractAddress).mintByRole(_msgSender(), count);
-        IERC1155MintableRoleBased(layout().targetERC1155ContractAddress).mintByRole(_msgSender(), tierId, count, "");
+        IERC1155MintableRoleBased(layout().targetERC1155ContractAddress).mintByRole(
+            _msgSender(),
+            ERC1155TieredSalesStorage.layout().tierToTokenId[tierId],
+            count,
+            ""
+        );
     }
 
     /**
