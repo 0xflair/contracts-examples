@@ -184,7 +184,6 @@ function App() {
       >
         <TieredSalesMintingSection />
       </TieredSalesProvider>
-
       */}
       </DiamondProvider>
     </div>

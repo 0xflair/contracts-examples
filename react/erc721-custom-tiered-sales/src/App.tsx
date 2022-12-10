@@ -3,6 +3,7 @@ import {
   SwitchChainButton,
   WalletDropdown,
   IfWalletConnected,
+  DiamondProvider,
   TieredSalesProvider,
   TieredSalesStatus,
   TieredSalesAllowlistStatus,
@@ -10,20 +11,17 @@ import {
   TieredSalesPrice,
   TieredSalesMintInput,
   TieredSalesMintButton,
-  TieredSalesPayButton,
   TieredSalesIfWalletCanMint,
   TieredSalesEligibleAmount,
   TieredSalesWalletMints,
-  TieredSalesIfSoldOut,
-  TieredSalesIfNotSoldOut,
+  TieredSalesSelector,
   TieredSalesApproveButton,
-  ERC721TieredSalesSelector,
-  ERC721TotalSupply,
-  ERC721MaxSupply,
+  TieredSalesIfNotSoldOut,
+  TieredSalesIfSoldOut,
+  TieredSalesPayButton,
+  // TieredSalesMintingSection,
   classNames,
   SECONDARY_BUTTON,
-  DiamondProvider,
-  // TieredSalesMintingSection,
 } from "@flair-sdk/react";
 
 import { useAccount } from "wagmi";
@@ -59,7 +57,7 @@ function App() {
             <main className="flex flex-col gap-y-8">
               {/* Tier Selector */}
               <div className="flex gap-2 items-center justify-center">
-                <ERC721TieredSalesSelector />
+                <TieredSalesSelector />
               </div>
 
               {/* Sale Info */}
@@ -78,18 +76,6 @@ function App() {
                     <TieredSalesStatus />
 
                     {isConnected && <TieredSalesAllowlistStatus />}
-                  </div>
-
-                  <div className="inline-block rounded-full bg-gray-100 px-4 py-2 text-center">
-                    <ERC721TotalSupply
-                      chainId={chainId}
-                      contractAddress={contractAddress}
-                    />{" "}
-                    /{" "}
-                    <ERC721MaxSupply
-                      chainId={chainId}
-                      contractAddress={contractAddress}
-                    />
                   </div>
                 </div>
               </div>
@@ -198,7 +184,6 @@ function App() {
       >
         <TieredSalesMintingSection />
       </TieredSalesProvider>
-
       */}
       </DiamondProvider>
     </div>
