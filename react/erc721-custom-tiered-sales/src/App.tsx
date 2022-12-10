@@ -10,6 +10,7 @@ import {
   TieredSalesPrice,
   TieredSalesMintInput,
   TieredSalesMintButton,
+  TieredSalesPayButton,
   TieredSalesMintingSection,
   TieredSalesIfWalletCanMint,
   TieredSalesEligibleAmount,
@@ -17,11 +18,14 @@ import {
   TieredSalesSelector,
   ERC721TotalSupply,
   ERC721MaxSupply,
+  TieredSalesIfSoldOut,
+  TieredSalesIfNotSoldOut,
+  TieredSalesApproveButton,
+  SECONDARY_BUTTON,
+  classNames,
 } from "@flair-sdk/react";
 
-import React, { useState } from "react";
 import { useAccount } from "wagmi";
-import { BigNumberish } from "ethers";
 
 const chainId = Number(process.env.REACT_APP_CONTRACT_CHAIN_ID);
 const contractAddress = process.env.REACT_APP_CONTRACT_ADDRESS as string;
@@ -29,9 +33,7 @@ const contractAddress = process.env.REACT_APP_CONTRACT_ADDRESS as string;
 function App() {
   const { isConnected } = useAccount();
 
-  const [mintCount, setMintCount] = useState<BigNumberish>("1");
-
-  const mintButtonClass =
+  const mainButtonClass =
     "w-full bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed";
 
   return (
@@ -100,29 +102,56 @@ function App() {
                   <fieldset className="mt-4">
                     <legend className="sr-only">Choose number of mints</legend>
                     <div className="flex">
-                      <TieredSalesMintInput
-                        mintCount={mintCount}
-                        setMintCount={setMintCount}
-                        className="appearance-none min-w-0 w-full bg-white border border-gray-300 rounded-md shadow-sm py-2 px-4 text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 disabled:opacity-75"
-                      />
+                      <TieredSalesMintInput className="appearance-none min-w-0 w-full bg-white border border-gray-300 rounded-md shadow-sm py-2 px-4 text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 disabled:opacity-75" />
                     </div>
                   </fieldset>
                 </div>
 
-                {/* Mint Button */}
-                <ConnectButton className={mintButtonClass}>
-                  <div className="flex gap-3 items-center">
-                    <SwitchChainButton
-                      requiredChainId={Number(chainId)}
-                      className={mintButtonClass}
-                    >
-                      <TieredSalesMintButton
-                        mintCount={mintCount}
-                        className={mintButtonClass}
-                      />
-                    </SwitchChainButton>
+                {/* Mint button */}
+                <TieredSalesIfNotSoldOut>
+                  <ConnectButton
+                    className={mainButtonClass}
+                    label={"Connect to Mint"}
+                  >
+                    <div className="flex flex-col gap-3 items-center">
+                      <SwitchChainButton
+                        requiredChainId={Number(chainId)}
+                        className={mainButtonClass}
+                      >
+                        <TieredSalesApproveButton className={mainButtonClass}>
+                          <TieredSalesMintButton className={mainButtonClass} />
+                        </TieredSalesApproveButton>
+                      </SwitchChainButton>
+                      <div className="flex gap-2 items-center w-full">
+                        <TieredSalesPayButton
+                          className={classNames(
+                            SECONDARY_BUTTON,
+                            "flex flex-1 flex-col justify-center items-center gap-2"
+                          )}
+                          method="stripe"
+                        />
+                        <TieredSalesPayButton
+                          className={classNames(
+                            SECONDARY_BUTTON,
+                            "flex flex-1 flex-col justify-center items-center gap-2"
+                          )}
+                          method="utrust"
+                        />
+                      </div>
+                    </div>
+                  </ConnectButton>
+                </TieredSalesIfNotSoldOut>
+
+                {/* Sold Out Message */}
+                <TieredSalesIfSoldOut>
+                  <div className="border-l-4 border-green-400 bg-green-50 p-4">
+                    <div className="flex">
+                      <div>
+                        <p className="text-sm text-green-700">Sold Out 🎉 </p>
+                      </div>
+                    </div>
                   </div>
-                </ConnectButton>
+                </TieredSalesIfSoldOut>
 
                 {/* Maximum Eligible Amount */}
                 <IfWalletConnected>
