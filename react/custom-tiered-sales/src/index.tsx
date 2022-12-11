@@ -1,15 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import reportWebVitals from "./reportWebVitals";
+import "./index.css";
+
 import { FlairProvider } from "@flair-sdk/react";
 
-import "./index.css";
 import App from "./App";
-import reportWebVitals from "./reportWebVitals";
+import AppCustomTierSelector from "./App.custom-tier-selector";
 
 ReactDOM.render(
   <React.StrictMode>
     <FlairProvider>
-      <App />
+      {/* <App /> */}
+      <AppCustomTierSelector />
     </FlairProvider>
   </React.StrictMode>,
   document.getElementById("root")
