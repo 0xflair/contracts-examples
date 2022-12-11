@@ -14,11 +14,13 @@ import {
   TieredSalesIfWalletCanMint,
   TieredSalesEligibleAmount,
   TieredSalesWalletMints,
-  TieredSalesSelector,
   TieredSalesApproveButton,
   TieredSalesIfNotSoldOut,
   TieredSalesIfSoldOut,
   TieredSalesPayButton,
+  ERC721TotalSupply,
+  ERC721MaxSupply,
+  ERC721TieredSalesSelector,
   // TieredSalesMintingSection,
   classNames,
   SECONDARY_BUTTON,
@@ -57,7 +59,7 @@ function App() {
             <main className="flex flex-col gap-y-8">
               {/* Tier Selector */}
               <div className="flex gap-2 items-center justify-center">
-                <TieredSalesSelector />
+                <ERC721TieredSalesSelector />
               </div>
 
               {/* Sale Info */}
@@ -76,6 +78,18 @@ function App() {
                     <TieredSalesStatus />
 
                     {isConnected && <TieredSalesAllowlistStatus />}
+                  </div>
+
+                  <div className="inline-block rounded-full bg-gray-100 px-4 py-2 text-center">
+                    <ERC721TotalSupply
+                      chainId={chainId}
+                      contractAddress={contractAddress}
+                    />{" "}
+                    /{" "}
+                    <ERC721MaxSupply
+                      chainId={chainId}
+                      contractAddress={contractAddress}
+                    />
                   </div>
                 </div>
               </div>
@@ -124,6 +138,7 @@ function App() {
                               "flex flex-1 flex-col justify-center items-center gap-2"
                             )}
                             method="stripe"
+                            alwaysShow={true}
                           />
                           <TieredSalesPayButton
                             className={classNames(
@@ -131,6 +146,7 @@ function App() {
                               "flex flex-1 flex-col justify-center items-center gap-2"
                             )}
                             method="utrust"
+                            alwaysShow={true}
                           />
                         </div>
                       </div>

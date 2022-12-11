@@ -15,7 +15,8 @@ This repository contains example usage of Flair SDK in various frameworks and la
 | Name                                                                       | Use Cases                                                                                                                                                                                           |
 | -------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [simple&#x2011;wallet&#x2011;integration](react/simple-wallet-integration) | Connect button with popular connectors and customizable styling (in ReactJS). Uses [wagmi.sh](https://github.com/wagmi-dev/wagmi) with already configured connectors and wallet-related components. |
-| [custom&#x2011;tiered-sales](react/custom-tiered-sales)                    | Custom style for your ERC20, ERC721 or ERC1155 token sales in your own website.                                                                                                                     |
+| [custom&#x2011;tiered&#x2011;sales](react/custom-tiered-sales)                    | Custom style for your ERC20, ERC721 or ERC1155 token sales in your own website.                                                                                                                     |
+| [erc721&#x2011;custom&#x2011;tiered&#x2011;sales](react/erc721-custom-tiered-sales)                    | Custom style for ERC721 token sales with supply counter component and multiple tiers selector.                                                                                                                     |
 
 ### Express
 
