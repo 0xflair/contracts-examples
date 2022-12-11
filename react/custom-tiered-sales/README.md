@@ -69,7 +69,7 @@ To use this example within your app:
 
 ## Customizations
 
-#### How to customize Tier Selector element?
+### How to customize Tier Selector element?
 
 Check out [App.custom-tier-selector.tsx](./src/App.custom-tier-selector.tsx) example for a complete set of props you can use to:
 * Decide if you want to show non-active tiers, or non-allowlisted tiers, or sold-out tiers.
