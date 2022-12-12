@@ -132,5 +132,10 @@
     "ethers": {
       "optional": true
     }
+  },
+  "dependencies": {
+    "@flair-sdk/common": "^2.64.3",
+    "@flair-sdk/contracts": "^2.23.6",
+    "@flair-sdk/registry": "^2.64.3"
   }
 }

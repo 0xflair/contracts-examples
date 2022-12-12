@@ -145,7 +145,7 @@ function App() {
                               SECONDARY_BUTTON,
                               "flex flex-1 flex-col justify-center items-center gap-2"
                             )}
-                            method="utrust"
+                            method="utrust,bitpay,coinbase"
                             alwaysShow={true}
                           />
                         </div>
