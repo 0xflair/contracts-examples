@@ -69,6 +69,7 @@ function AppCustomTierSelector() {
             }
 
             // Customize each tier element:
+            optionClassName=''
             optionElement={({
               active,
               checked,
