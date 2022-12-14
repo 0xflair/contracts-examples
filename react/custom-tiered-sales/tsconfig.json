@@ -16,5 +16,8 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["src"]
+  "include": [
+    "src",
+    "../erc721-custom-tiered-sales/src/MyCustomTierSelector.tsx"
+  ]
 }

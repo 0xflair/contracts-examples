@@ -29,6 +29,8 @@ import { useEffect } from "react";
 
 import { useAccount } from "wagmi";
 
+import MyCustomTierSelector from "./MyCustomTierSelector";
+
 const chainId = Number(process.env.REACT_APP_CONTRACT_CHAIN_ID);
 const contractAddress = process.env.REACT_APP_CONTRACT_ADDRESS as `0x${string}`;
 
@@ -78,6 +80,7 @@ function App() {
               {/* Tier Selector */}
               <div className="flex gap-2 items-center justify-center">
                 <ERC721TieredSalesSelector />
+                {/* <MyCustomTierSelector /> */}
               </div>
 
               {/* Sale Info */}

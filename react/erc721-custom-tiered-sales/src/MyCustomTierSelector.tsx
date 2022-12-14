@@ -25,8 +25,8 @@ function MyCustomTierSelector() {
       title={false}
       
       // Don't wrap tier elements with a parent element:
-      wrapper={true}
-      wrapperClassName="grid grid-cols-3 gap-4"
+      wrapper={false}
+      wrapperClassName=""
       
       // Show a simple loading element:
       loadingElement={
