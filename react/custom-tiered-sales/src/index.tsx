@@ -6,13 +6,11 @@ import "./index.css";
 import { FlairProvider } from "@flair-sdk/react";
 
 import App from "./App";
-// import AppCustomTierSelector from "./App.custom-tier-selector";
 
 ReactDOM.render(
   <React.StrictMode>
     <FlairProvider>
       <App />
-      {/* <AppCustomTierSelector /> */}
     </FlairProvider>
   </React.StrictMode>,
   document.getElementById("root")

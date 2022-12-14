@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@flair-sdk/react": "^2.66.2",
+    "@flair-sdk/react": "^2.66.3",
     "@headlessui/react": "^1.6.4",
     "@heroicons/react": "^1.0.6",
     "@tailwindcss/aspect-ratio": "^0.4.0",

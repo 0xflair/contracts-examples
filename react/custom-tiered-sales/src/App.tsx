@@ -19,13 +19,12 @@ import {
   TieredSalesIfNotSoldOut,
   TieredSalesIfSoldOut,
   TieredSalesPayButton,
-  // TieredSalesMintingSection,
   classNames,
   SECONDARY_BUTTON,
   useWalletContext,
 } from "@flair-sdk/react";
-import { useEffect } from "react";
 
+import { useEffect } from "react";
 import { useAccount } from "wagmi";
 
 const chainId = Number(process.env.REACT_APP_CONTRACT_CHAIN_ID);

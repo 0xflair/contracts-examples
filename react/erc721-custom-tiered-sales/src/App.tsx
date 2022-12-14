@@ -21,7 +21,6 @@ import {
   ERC721TotalSupply,
   ERC721MaxSupply,
   ERC721TieredSalesSelector,
-  // TieredSalesMintingSection,
   classNames,
   SECONDARY_BUTTON,
   useWalletContext,
