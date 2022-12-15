@@ -71,7 +71,7 @@ function MyCustomTierSelector() {
                 <CryptoValue
                   symbol={currencySymbol}
                   value={tierConfig.price?.toString()}
-                  unit={CryptoUnits.WEI}
+                  formatted={false}
                   showPrice={false}
                   showSymbol={true}
                 />
