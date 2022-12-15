@@ -73,10 +73,8 @@ To use this example within your app:
 
 ### How to customize Tier Selector element?
 
-Check out [App.custom-tier-selector.tsx](../custom-tiered-sales/src/App.custom-tier-selector.tsx) example for a complete set of props you can use to:
+Check out [MyCustomTierSelector.tsx](./src/MyCustomTierSelector.tsx) example for a complete set of props you can use to:
 * Decide if you want to show non-active tiers, or non-allowlisted tiers, or sold-out tiers.
 * Show or hide the selector title and it's className.
 * A custom loading element to show while the tiers are loading.
 * Fully control how each tier element is rendered.
-
-https://github.com/flair-sdk/examples/blob/main/react/custom-tiered-sales/src/App.custom-tier-selector.tsx#L47-L87
