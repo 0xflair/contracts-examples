@@ -44,8 +44,8 @@ function MyCustomTierSelector() {
         currencySymbol,
         tierConfig,
         tierId,
-        tokenMetadata,
-        tokenMetadataLoading,
+        tierMetadata,
+        tierMetadataLoading,
       }) => (
         <ul className="list-disc list-outside pl-6 w-full border border-indigo-300 rounded-lg">
           <li className="list-item">
@@ -128,10 +128,10 @@ function MyCustomTierSelector() {
           <li className="list-item">
             Tier image ={" "}
             <b>
-              {tokenMetadataLoading ? (
+              {tierMetadataLoading ? (
                 "Loading..."
-              ) : tokenMetadata?.image ? (
-                <Media uri={tokenMetadata.image} className="h-8 w-8" />
+              ) : tierMetadata?.image ? (
+                <Media uri={tierMetadata.image} className="h-8 w-8" preferManagedGateway={true} />
               ) : (
                 <i>No image</i>
               )}
@@ -139,7 +139,7 @@ function MyCustomTierSelector() {
           </li>
 
           <li className="list-item">
-            Tier name = <b>{tokenMetadata?.name || "No title set"}</b>
+            Tier name = <b>{tierMetadata?.name || "No title set"}</b>
           </li>
 
           <li className="list-item">
