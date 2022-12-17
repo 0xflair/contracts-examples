@@ -14,7 +14,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>Welcome to Flair examples!</p>
+        <div>Welcome to Flair examples!</div>
         <p>
           {/* Render a simple connect button */}
           <IfWalletNotConnected>
