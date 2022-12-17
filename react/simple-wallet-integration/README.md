@@ -27,7 +27,7 @@ This example React app renders a connect button and when wallet is connected it 
 
 3. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-![Screenshot](./docs/screenshot.png)
+![Screenshot](./screenshot.png)
 
 ## 🔮 Tutorial
 

@@ -19,15 +19,19 @@ This example React app renders a connect button, allows the user to sign-in (to 
    npm install
    ```
 
-2. Run the react app in the `sign-in-and-show-nfts` directory:
+2. Grab your contract address and chain ID, and update [.env](./.env):
+   - Set `REACT_APP_CONTRACT_ADDRESS` to your deployed contract address you get from Flair's dashboard > Collections > your-collection > Deploy tab.
+   - Set `REACT_APP_CONTRACT_CHAIN_ID` depending on the contract chain. Use `1` for Eth mainnet, `5` for Goerli testnet, `137` for Polygon mainnet, etc.
+
+3. Run the react app in the `sign-in-and-show-nfts` directory:
 
    ```sh
    npm start
    ```
 
-3. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+4. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-![Screenshot](./docs/screenshot.png)
+![Screenshot](./screenshot.png)
 
 ## 🔮 Tutorial
 

@@ -3,7 +3,7 @@ import {
   Media,
   normalizeIpfsUrl,
   Spinner,
-} from '.@flair-sdk/react';
+} from '@flair-sdk/react';
 
 type Props = ERC721TokenRenderOptions;
 
