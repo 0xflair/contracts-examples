@@ -94,6 +94,9 @@ To use this example within your app:
 5.  Get connected wallet NFTs from `useNftTokensByWallet()` hook:
 
     ```ts
+    import { useAccount } from "wagmi";
+    import { useNftTokensByWallet } from "@flair-sdk/react";
+
     const account = useAccount();
 
     const {
@@ -102,7 +105,6 @@ To use this example within your app:
       isLoading: nftTokensLoading,
       sendRequest: refreshNftTokens,
     } = useNftTokensByWallet({
-      env,
       chainId: 1, // Chain ID (1 for Ethereum Mainnet, 5 for Goerli, 137 for Polygon, etc.)
       contractAddress: "0x....NFT_CONTRACT_ADDRESS.....",
       walletAddress: account.address,
@@ -167,5 +169,7 @@ To use this example within your app:
       return data;
     }
     ```
+
+    **Alternatively** you can install SIWE library based on your backend language and verify the signature yourself locally, without this API call. See [SIWE library](https://github.com/spruceid/siwe).
 
 9.  Profit :rocket:
