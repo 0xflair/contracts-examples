@@ -22,7 +22,7 @@ This example React app renders a minting widget for an NFT collection deployed v
 
 3. Grab your contract address and chain ID, and update [.env](./.env):
    - Set `REACT_APP_CONTRACT_ADDRESS` to your deployed contract address you get from Flair's dashboard > Collections > your-collection > Deploy tab.
-   - Set `REACT_APP_CONTRACT_CHAIN_ID` depending on the contract chain. Use `1` for Eth mainnet, `4` for Rinkeby testnet, `137` for Polygon mainnet, etc.
+   - Set `REACT_APP_CONTRACT_CHAIN_ID` depending on the contract chain. Use `1` for Eth mainnet, `5` for Goerli testnet, `137` for Polygon mainnet, etc.
 4. Run the react app in the `custom-tiered-sales` directory:
 
    ```sh
