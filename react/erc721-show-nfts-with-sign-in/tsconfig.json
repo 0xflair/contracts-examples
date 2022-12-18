@@ -17,5 +17,11 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["src"]
+  "include": [
+    "src",
+    "../../../dashboard-v2/src/core/wallet/useLoginJwt.ts",
+    "../../../dashboard-v2/src/core/wallet/providers/login.tsx",
+    "../../../dashboard-v2/src/core/wallet/constants/login.ts",
+    "../../../dashboard-v2/src/core/wallet/components/LoginButton.tsx"
+  ]
 }

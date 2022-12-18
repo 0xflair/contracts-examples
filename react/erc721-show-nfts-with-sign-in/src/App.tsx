@@ -1,18 +1,24 @@
 import {
+  Badge,
   Button,
   ConnectButton,
   ERC721Token,
   Errors,
   IfWalletConnected,
+  IfWalletNotSignedIn,
+  IfWalletSignedIn,
   PRIMARY_BUTTON,
   SECONDARY_BUTTON,
+  SignInButton,
+  SignOutButton,
   Spinner,
   useERC721Balance,
   useNftTokensByWallet,
+  useSignInContext,
   useWalletContext,
   WalletDropdown,
 } from '@flair-sdk/react';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect } from 'react';
 import { useAccount } from 'wagmi';
 
 import { MyCustomNFTView } from './components/MyCustomNFTView';
@@ -31,6 +37,9 @@ function App() {
   }, []);
 
   const account = useAccount();
+  const {
+    data: { signatureHex, signatureMessage },
+  } = useSignInContext();
 
   const {
     data: nftTokens,
@@ -56,7 +65,30 @@ function App() {
     enabled: Boolean(account.address),
   });
 
-  const [selectedTokenIds, setSelectedTokenIds] = useState<string[]>([]);
+  const sendFirstNFTAndSignature = useCallback(async () => {
+    if (!nftTokens || !nftTokens.length) {
+      return;
+    }
+
+    const firstNftToken = nftTokens[0].tokenId;
+    const requestPayload = {
+      // Any payload related to your logic:
+      nftTokenId: firstNftToken,
+
+      // Wallet address, signature hash, and signature message used for verification:
+      walletAddress: account.address,
+      signatureHex,
+      signatureMessage,
+    };
+
+    alert(
+      `Sending request payload for example: ${JSON.stringify(
+        requestPayload,
+        null,
+        2,
+      )}`,
+    );
+  }, [account.address, nftTokens, signatureHex, signatureMessage]);
 
   return (
     <div className="flex flex-col gap-6 items-center justify-center min-h-screen">
@@ -73,9 +105,25 @@ function App() {
       </header>
 
       <main className="flex flex-col gap-4">
-        <IfWalletConnected>
+        <IfWalletNotSignedIn>
+          <Badge
+            color="yellow"
+            text="Your wallet is connected, BUT you need to sign-in to prove
+          ownership, then you will see your NFTs."
+          />
+        </IfWalletNotSignedIn>
+        <div className="flex flex-col gap-2 items-center justify-center">
+          <SignInButton
+            className={PRIMARY_BUTTON}
+            label="Sign-in to see your NFTs"
+          >
+            <span>OK, you're now signed in!</span>
+            <SignOutButton className={SECONDARY_BUTTON} label="Sign-out now" />
+          </SignInButton>
+        </div>
+        <IfWalletSignedIn>
           <div className="flex justify-between">
-            <span>Here are your NFTs:</span>
+            <span>Here are your NFTs ({nftBalance?.toString()} total):</span>
             <Button
               className={SECONDARY_BUTTON}
               text={'Refresh'}
@@ -97,8 +145,6 @@ function App() {
                 chainId={chainId}
                 contractAddress={contractAddress}
                 tokenId={nftToken.tokenId}
-                tokenUri={nftToken.tokenUri}
-                metadata={nftToken.metadata}
               >
                 {({
                   tokenId,
@@ -122,8 +168,15 @@ function App() {
               </ERC721Token>
             ))}
           </div>
-        </IfWalletConnected>
+        </IfWalletSignedIn>
       </main>
+
+      <IfWalletSignedIn>
+        <Button
+          text={'Send to backend'}
+          onClick={() => sendFirstNFTAndSignature()}
+        />
+      </IfWalletSignedIn>
     </div>
   );
 }

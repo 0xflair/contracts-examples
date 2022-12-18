@@ -12,7 +12,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <FlairProvider>
+    <FlairProvider signIn={{ expireIn: 24 * 60 * 60 * 1_000 }}>
       <App />
     </FlairProvider>
   </React.StrictMode>,

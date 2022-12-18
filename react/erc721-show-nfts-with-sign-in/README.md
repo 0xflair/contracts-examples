@@ -49,7 +49,8 @@ To use this example within your app:
     import { FlairProvider } from "@flair-sdk/react";
 
     // ...
-    <FlairProvider>
+    // For example make sure signed messages are expired in 24 hours:
+    <FlairProvider signIn={{ expireIn: 24 * 60 * 60 * 1_000 }}>
       <App />
     </FlairProvider>;
     // ...
@@ -74,7 +75,7 @@ To use this example within your app:
       return (
         <div>
           {/* Render a simple connect button: */}
-          Hi! You can connect here: <ConnectButton />
+          <ConnectButton />
           
           {/* If user is connected render a dropdown: */}
           <IfWalletConnected>
@@ -122,12 +123,30 @@ To use this example within your app:
     <div>
       {nftTokens?.map((nftToken) => (
         <ERC721Token
-          chainId={YOUR_CONTRACT_CHAIN_ID_HERE}
-          contractAddress={nftToken.contractAddress}
+          chainId={chainId}
+          contractAddress={contractAddress}
           tokenId={nftToken.tokenId}
-          tokenUri={nftToken.tokenUri}
-          metadata={nftToken.metadata}
-        />
+        >
+          {({
+            tokenId,
+            tokenUri,
+            tokenUriError,
+            tokenUriLoading,
+            metadata,
+            metadataError,
+            metadataLoading,
+          }) => (
+            <MyCustomNFTView
+              tokenId={tokenId}
+              tokenUri={tokenUri}
+              tokenUriError={tokenUriError}
+              tokenUriLoading={tokenUriLoading}
+              metadata={metadata}
+              metadataError={metadataError}
+              metadataLoading={metadataLoading}
+            />
+          )}
+        </ERC721Token>
       ))}
     </div>
     ```
@@ -139,16 +158,21 @@ To use this example within your app:
     import { useSignInMessage } from "@flair-sdk/react";
 
     const account = useAccount();
-    const { data: { signatureHex, signatureMessage } } = useSignInMessage();
+    const {
+      data: { signatureHex, signatureMessage },
+    } = useSignInContext();
 
     const [tokenId, setTokenId] = useState<string>();
 
     const payload = useMemo(() => {
       return {
+        // Your custom payload:
+        tokenId,
+
+        // Payload to use for wallet true ownership verification in the backend:
         walletAddress: account.address,
         signatureHex,
         signatureMessage,
-        tokenId,
     });
 
     // Send payload to your backend with useCallback or any other means...
