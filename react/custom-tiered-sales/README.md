@@ -22,7 +22,7 @@ This example React app renders a minting widget for an NFT collection deployed v
 
 3. Grab your contract address and chain ID, and update [.env](./.env):
    - Set `REACT_APP_CONTRACT_ADDRESS` to your deployed contract address you get from Flair's dashboard > Collections > your-collection > Deploy tab.
-   - Set `REACT_APP_CONTRACT_CHAIN_ID` depending on the contract chain. Use `1` for Eth mainnet, `4` for Rinkeby testnet, `137` for Polygon mainnet, etc.
+   - Set `REACT_APP_CONTRACT_CHAIN_ID` depending on the contract chain. Use `1` for Eth mainnet, `5` for Goerli testnet, `137` for Polygon mainnet, etc.
 4. Run the react app in the `custom-tiered-sales` directory:
 
    ```sh
@@ -66,3 +66,13 @@ To use this example within your app:
    2. Then create a [config-overrides.js](config-overrides.js) to inject the Buffer.
 
 5. Profit :rocket:
+
+## Customizations
+
+### How to customize Tier Selector element?
+
+Check out [MyCustomTierSelector.tsx](../erc721-custom-tiered-sales/src/MyCustomTierSelector.tsx) example for a complete set of props you can use to:
+* Decide if you want to show non-active tiers, or non-allowlisted tiers, or sold-out tiers.
+* Show or hide the selector title and it's className.
+* A custom loading element to show while the tiers are loading.
+* Fully control how each tier element is rendered.

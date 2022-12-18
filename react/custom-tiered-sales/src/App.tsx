@@ -19,11 +19,12 @@ import {
   TieredSalesIfNotSoldOut,
   TieredSalesIfSoldOut,
   TieredSalesPayButton,
-  // TieredSalesMintingSection,
   classNames,
   SECONDARY_BUTTON,
+  useWalletContext,
 } from "@flair-sdk/react";
 
+import { useEffect } from "react";
 import { useAccount } from "wagmi";
 
 const chainId = Number(process.env.REACT_APP_CONTRACT_CHAIN_ID);
@@ -35,6 +36,16 @@ function App() {
   const mainButtonClass =
     "w-full bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed";
 
+  const { setPreferredChainId, setAllowedNetworks } = useWalletContext();
+
+  useEffect(() => {
+    setPreferredChainId(Number(chainId));
+    setAllowedNetworks([Number(chainId)]);
+
+    window.scrollTo(0, 0);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <div className="flex items-center justify-center min-h-screen">
       <DiamondProvider
@@ -44,6 +55,13 @@ function App() {
         <TieredSalesProvider
           chainId={Number(chainId)}
           contractAddress={contractAddress}
+          onMintSuccess={({ mintCount, txReceipt }) => {
+            alert(
+              `Yaaay! You minted ${mintCount.toString()} tokens! \n Tx Hash: ${
+                txReceipt?.transactionHash
+              }`
+            );
+          }}
         >
           <main className="h-fit w-full max-w-2xl min-w-xl mx-auto lg:max-w-5xl flex flex-col gap-8 items-center p-4">
             {/* Sales Title */}
@@ -104,7 +122,7 @@ function App() {
                   <TieredSalesIfNotSoldOut>
                     <ConnectButton
                       className={mainButtonClass}
-                      label={"Connect to Mint"}
+                      label={"Sign-in to buy"}
                     >
                       <div className="flex flex-col gap-3 items-center">
                         <SwitchChainButton
@@ -116,23 +134,25 @@ function App() {
                               className={mainButtonClass}
                             />
                           </TieredSalesApproveButton>
+                          <div className="flex gap-2 items-center w-full">
+                            <TieredSalesPayButton
+                              className={classNames(
+                                SECONDARY_BUTTON,
+                                "flex flex-1 flex-col justify-center items-center gap-2"
+                              )}
+                              method="stripe"
+                              alwaysShow={true}
+                            />
+                            <TieredSalesPayButton
+                              className={classNames(
+                                SECONDARY_BUTTON,
+                                "flex flex-1 flex-col justify-center items-center gap-2"
+                              )}
+                              method="utrust,bitpay,coinbase"
+                              alwaysShow={true}
+                            />
+                          </div>
                         </SwitchChainButton>
-                        <div className="flex gap-2 items-center w-full">
-                          <TieredSalesPayButton
-                            className={classNames(
-                              SECONDARY_BUTTON,
-                              "flex flex-1 flex-col justify-center items-center gap-2"
-                            )}
-                            method="stripe"
-                          />
-                          <TieredSalesPayButton
-                            className={classNames(
-                              SECONDARY_BUTTON,
-                              "flex flex-1 flex-col justify-center items-center gap-2"
-                            )}
-                            method="utrust"
-                          />
-                        </div>
                       </div>
                     </ConnectButton>
                   </TieredSalesIfNotSoldOut>
@@ -175,16 +195,6 @@ function App() {
             </main>
           </main>
         </TieredSalesProvider>
-
-        {/* OR, import the whole prebuilt minting component:
-      
-      <TieredSalesProvider
-        chainId={Number(chainId)}
-        contractAddress={contractAddress}
-      >
-        <TieredSalesMintingSection />
-      </TieredSalesProvider>
-      */}
       </DiamondProvider>
     </div>
   );
