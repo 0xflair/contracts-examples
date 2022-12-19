@@ -10,3 +10,4 @@ cache-zk
 artifacts-zk
 
 dist
+.DS_Store
