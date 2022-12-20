@@ -104,72 +104,77 @@ function App() {
         </div>
       </header>
 
-      <main className="flex flex-col gap-4">
-        <IfWalletNotSignedIn>
-          <Badge
-            color="yellow"
-            text="Your wallet is connected, BUT you need to sign-in to prove
+      <IfWalletConnected>
+        <main className="flex flex-col gap-4">
+          <IfWalletNotSignedIn>
+            <Badge
+              color="yellow"
+              text="Your wallet is connected, BUT you need to sign-in to prove
           ownership, then you will see your NFTs."
-          />
-        </IfWalletNotSignedIn>
-        <div className="flex flex-col gap-2 items-center justify-center">
-          <SignInButton
-            className={PRIMARY_BUTTON}
-            label="Sign-in to see your NFTs"
-          >
-            <span>OK, you're now signed in!</span>
-            <SignOutButton className={SECONDARY_BUTTON} label="Sign-out now" />
-          </SignInButton>
-        </div>
-        <IfWalletSignedIn>
-          <div className="flex justify-between">
-            <span>Here are your NFTs ({nftBalance?.toString()} total):</span>
-            <Button
-              className={SECONDARY_BUTTON}
-              text={'Refresh'}
-              onClick={() => refreshNftTokens()}
-              disabled={nftTokensLoading}
             />
+          </IfWalletNotSignedIn>
+          <div className="flex flex-col gap-2 items-center justify-center">
+            <SignInButton
+              className={PRIMARY_BUTTON}
+              label="Sign-in to see your NFTs"
+            >
+              <span>OK, you're now signed in!</span>
+              <SignOutButton
+                className={SECONDARY_BUTTON}
+                label="Sign-out now"
+              />
+            </SignInButton>
           </div>
-          <div className="flex justify-between">
-            {nftTokensLoading ? (
-              <div className="flex items-center gap-2">
-                <Spinner /> Loading...
-              </div>
-            ) : null}
-            {nftTokensError ? <Errors error={nftTokensError} /> : null}
-          </div>
-          <div className="flex gap-4 flex-wrap">
-            {nftTokens?.map((nftToken) => (
-              <ERC721Token
-                chainId={chainId}
-                contractAddress={contractAddress}
-                tokenId={nftToken.tokenId}
-              >
-                {({
-                  tokenId,
-                  tokenUri,
-                  tokenUriError,
-                  tokenUriLoading,
-                  metadata,
-                  metadataError,
-                  metadataLoading,
-                }) => (
-                  <MyCustomNFTView
-                    tokenId={tokenId}
-                    tokenUri={tokenUri}
-                    tokenUriError={tokenUriError}
-                    tokenUriLoading={tokenUriLoading}
-                    metadata={metadata}
-                    metadataError={metadataError}
-                    metadataLoading={metadataLoading}
-                  />
-                )}
-              </ERC721Token>
-            ))}
-          </div>
-        </IfWalletSignedIn>
-      </main>
+          <IfWalletSignedIn>
+            <div className="flex justify-between">
+              <span>Here are your NFTs ({nftBalance?.toString()} total):</span>
+              <Button
+                className={SECONDARY_BUTTON}
+                text={'Refresh'}
+                onClick={() => refreshNftTokens()}
+                disabled={nftTokensLoading}
+              />
+            </div>
+            <div className="flex justify-between">
+              {nftTokensLoading ? (
+                <div className="flex items-center gap-2">
+                  <Spinner /> Loading...
+                </div>
+              ) : null}
+              {nftTokensError ? <Errors error={nftTokensError} /> : null}
+            </div>
+            <div className="flex gap-4 flex-wrap">
+              {nftTokens?.map((nftToken) => (
+                <ERC721Token
+                  chainId={chainId}
+                  contractAddress={contractAddress}
+                  tokenId={nftToken.tokenId}
+                >
+                  {({
+                    tokenId,
+                    tokenUri,
+                    tokenUriError,
+                    tokenUriLoading,
+                    metadata,
+                    metadataError,
+                    metadataLoading,
+                  }) => (
+                    <MyCustomNFTView
+                      tokenId={tokenId}
+                      tokenUri={tokenUri}
+                      tokenUriError={tokenUriError}
+                      tokenUriLoading={tokenUriLoading}
+                      metadata={metadata}
+                      metadataError={metadataError}
+                      metadataLoading={metadataLoading}
+                    />
+                  )}
+                </ERC721Token>
+              ))}
+            </div>
+          </IfWalletSignedIn>
+        </main>
+      </IfWalletConnected>
 
       <IfWalletSignedIn>
         <Button
