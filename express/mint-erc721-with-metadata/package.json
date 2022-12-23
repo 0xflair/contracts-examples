@@ -10,8 +10,8 @@
   "license": "MIT",
   "dependencies": {
     "@flair-sdk/contracts": "^2.23.9",
-    "@flair-sdk/ipfs": "^2.74.20",
-    "@flair-sdk/metatx": "^2.74.20",
+    "@flair-sdk/ipfs": "^2.74.21",
+    "@flair-sdk/metatx": "^2.74.21",
     "@flair-sdk/registry": "^2.73.1",
     "dotenv": "^16.0.1",
     "ethers": "^5.7.0",
