@@ -134,8 +134,8 @@
     }
   },
   "dependencies": {
-    "@flair-sdk/common": "^2.74.16",
+    "@flair-sdk/common": "^2.74.20",
     "@flair-sdk/contracts": "^2.23.9",
-    "@flair-sdk/registry": "^2.74.16"
+    "@flair-sdk/registry": "^2.74.20"
   }
 }
