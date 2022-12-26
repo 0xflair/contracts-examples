@@ -10,7 +10,7 @@ import "@flair-sdk/contracts/access/roles/AccessControlInternal.sol";
 import "@flair-sdk/contracts/token/ERC721/facets/minting/IERC721MintableRoleBased.sol";
 import "@flair-sdk/contracts/token/ERC1155/facets/minting/IERC1155MintableRoleBased.sol";
 import "@flair-sdk/contracts/token/ERC1155/facets/sales/ERC1155TieredSalesStorage.sol";
-import "@openzeppelin/contracts/security/ReentrancyGuard.sol"; // TODO replace with diamond version
+import "@flair-sdk/contracts/security/ReentrancyGuard.sol";
 
 /**
  * @title My Custom Tiered Sales

@@ -1,0 +1,13 @@
+node_modules
+.env
+coverage
+coverage.json
+typechain
+
+cache
+artifacts
+cache-zk
+artifacts-zk
+
+dist
+.DS_Store
