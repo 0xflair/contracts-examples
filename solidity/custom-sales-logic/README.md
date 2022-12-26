@@ -27,17 +27,17 @@ In this example we create a simple small contract, then use Flair's existing "Ti
 
 3. Go to Flair's dashboard and create an "Empty Diamond":
 
-   ![Empty Diamond](./docs/empty-diamond.png)
+   ![Empty Diamond](./screenshots/empty-diamond.png)
 
 4. Import our custom facet object from [`src/facets.json`](./src/facets.json):
 
 > :warning: Please double check that the first object property of facet object is `addresses`
 
-![Custom Facet](./docs/custom-facet.png)
+![Custom Facet](./screenshots/custom-facet.png)
 
 5. Add ready-made `TieredSalesOwnable` facet which allows you to manage the tiers configs such as Price, Allocation, Allowlist, Start and End Dates etc.
 
-   ![Tiered Sales](./docs/tiered-sales-ownable.png)
+   ![Tiered Sales](./screenshots/tiered-sales-ownable.png)
 
 Additionally, add these facets as well:
 
@@ -47,11 +47,11 @@ Additionally, add these facets as well:
 
 6. Configure your tiers and the token you want to sell:
 
-   ![Tiers](./docs/tiers.png)
+   ![Tiers](./screenshots/tiers.png)
 
 7. Save or deploy our diamond contract, which is responsible for our sales mechanism:
 
-   ![Deploy](./docs/deploy.png)
+   ![Deploy](./screenshots/deploy.png)
 
 8. Configure our custom token addresses on our custom sales facet:
 
@@ -61,15 +61,15 @@ Additionally, add these facets as well:
 
    You need to provide the address of your **newly deployed "Diamond"** to Louper (_not_ the facet code contract), and then find our custom facet **"MyCustomTieredSales"**, then click on "Write" button, to get to this interface below, where we select the functions and execute.
 
-   ![Set Target Tokens](./docs/set-target-tokens.png)
+   ![Set Target Tokens](./screenshots/set-target-tokens.png)
 
 9. Grant MINTER_ROLE to our newly deployed Diamond on the 2 NFT token contacts (ERC721 and ERC1155):
 
-   ![Grant Minter Role](./docs/grant-minter-role.png)
+   ![Grant Minter Role](./screenshots/grant-minter-role.png)
 
 10. If you need to specify which ERC1155 token id should be minted for a specific tier if in our custom sales contract, go to `write` section under `ERC1155TieredSalesOwnable` in Louper and configure it there:
 
-![Configure Tier Token ID](./docs/configure-tier-token-id.png)
+![Configure Tier Token ID](./screenshots/configure-tier-token-id.png)
 
 ## Upgrades
 

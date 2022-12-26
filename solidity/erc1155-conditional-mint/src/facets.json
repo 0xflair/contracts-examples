@@ -1,0 +1,25 @@
+{
+  "my-amazing-team:erc1155/MyERC1155ConditionalMint": {
+    "addresses": {
+      "5": "0xf4Cf562c1548608A15B6202B544829087299A446",
+      "goerli": "0xf4Cf562c1548608A15B6202B544829087299A446"
+    },
+    "functionSelectors": [
+      "claimByERC721(uint256,uint256,uint256)",
+      "setMaxAllowancePerERC721(uint256)",
+      "setTargetERC721(address)"
+    ],
+    "fqn": "my-amazing-team:erc1155/MyERC1155ConditionalMint",
+    "version": "0.0.1",
+    "providesInterfaces": [],
+    "peerDependencies": [],
+    "requiredDependencies": [
+      "0xbb774d48"
+    ],
+    "category": "NFTs",
+    "title": "My Custom ERC1155 Conditional Minting",
+    "notice": "This is an example repository that mints ERC1155 tokens if sender owns a specific ERC721.",
+    "source": "https://github.com/flair-sdk/examples/blob/v0.0.1/src/erc1155/MyERC1155ConditionalMint.sol",
+    "author": "my-amazing-team.eth"
+  }
+}
