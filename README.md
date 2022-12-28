@@ -30,6 +30,7 @@ This repository contains example usage of Flair SDK in various frameworks and la
 | Name                                                                                | Use Cases                                                                                                    |
 | ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
 | [custom&#x2011;sales&#x2011;logic](solidity/custom-sales-logic) | Create your own custom sales logic and take advantage of ready-made Flair's Tiered Sales mechanism. |
+| [erc1155&#x2011;conditional&#x2011;mint](solidity/erc1155-conditional-mint) | Create an ERC1155 extension for custom minting logic. |
 
 ## Questions?
 

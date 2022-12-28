@@ -9,9 +9,9 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@flair-sdk/contracts": "^2.23.9",
-    "@flair-sdk/ipfs": "^2.76.4",
-    "@flair-sdk/metatx": "^2.76.4",
+    "@flair-sdk/contracts": "^2.24.0",
+    "@flair-sdk/ipfs": "^2.80.3",
+    "@flair-sdk/metatx": "^2.80.3",
     "@flair-sdk/registry": "^2.73.1",
     "dotenv": "^16.0.1",
     "ethers": "^5.7.0",

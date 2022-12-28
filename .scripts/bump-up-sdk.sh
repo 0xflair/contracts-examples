@@ -7,6 +7,10 @@ cd ${SCRIPT_DIR}/../solidity/custom-sales-logic
 npm remove @flair-sdk/common @flair-sdk/registry @flair-sdk/contracts && \
 npm i @flair-sdk/common@latest @flair-sdk/registry@latest @flair-sdk/contracts@latest
 
+cd ${SCRIPT_DIR}/../solidity/erc1155-conditional-mint
+npm remove @flair-sdk/common @flair-sdk/registry @flair-sdk/contracts && \
+npm i @flair-sdk/common@latest @flair-sdk/registry@latest @flair-sdk/contracts@latest
+
 # React
 cd ${SCRIPT_DIR}/../react/custom-tiered-sales
 npm remove @flair-sdk/react && \
