@@ -141,11 +141,11 @@ function App() {
 
                     {/* Mint button */}
                     <TieredSalesIfNotSoldOut>
-                      <ConnectButton
-                        className={mainButtonClass}
-                        label={"Sign-in to buy"}
-                      >
-                        <div className="flex flex-col gap-3 items-center">
+                      <div className="flex flex-col gap-3 items-center">
+                        <ConnectButton
+                          className={mainButtonClass}
+                          label={"Sign-in to buy"}
+                        >
                           <SwitchChainButton
                             requiredChainId={Number(chainId)}
                             className={mainButtonClass}
@@ -157,42 +157,42 @@ function App() {
                                 className={mainButtonClass}
                               />
                             </TieredSalesApproveButton>
-                            <div className="flex gap-2 items-center w-full">
-                              {rampRequestConfig?.canSponsorTransaction ? (
-                                <TieredSalesMintButton
-                                  rampIgnoreCurrentBalance={true}
-                                  rampPreferredMethod={"sponsor"}
-                                  className={classNames(
-                                    SECONDARY_BUTTON,
-                                    "flex flex-1 flex-col justify-center items-center gap-2"
-                                  )}
-                                >
-                                  Mint without Gas
-                                </TieredSalesMintButton>
-                              ) : (
-                                <>
-                                  <TieredSalesPayButton
-                                    className={classNames(
-                                      SECONDARY_BUTTON,
-                                      "flex flex-1 flex-col justify-center items-center gap-2"
-                                    )}
-                                    method="stripe"
-                                    alwaysShow={true}
-                                  />
-                                  <TieredSalesPayButton
-                                    className={classNames(
-                                      SECONDARY_BUTTON,
-                                      "flex flex-1 flex-col justify-center items-center gap-2"
-                                    )}
-                                    method="utrust,bitpay,coinbase"
-                                    alwaysShow={true}
-                                  />
-                                </>
-                              )}
-                            </div>
                           </SwitchChainButton>
+                        </ConnectButton>
+                        <div className="flex gap-2 items-center w-full">
+                          {rampRequestConfig?.canSponsorTransaction ? (
+                            <TieredSalesMintButton
+                              rampIgnoreCurrentBalance={true}
+                              rampPreferredMethod={"sponsor"}
+                              className={classNames(
+                                SECONDARY_BUTTON,
+                                "flex flex-1 flex-col justify-center items-center gap-2"
+                              )}
+                            >
+                              Mint without Gas
+                            </TieredSalesMintButton>
+                          ) : (
+                            <>
+                              <TieredSalesPayButton
+                                className={classNames(
+                                  SECONDARY_BUTTON,
+                                  "flex flex-1 flex-col justify-center items-center gap-2"
+                                )}
+                                method="stripe"
+                                alwaysShow={true}
+                              />
+                              <TieredSalesPayButton
+                                className={classNames(
+                                  SECONDARY_BUTTON,
+                                  "flex flex-1 flex-col justify-center items-center gap-2"
+                                )}
+                                method="utrust,bitpay,coinbase"
+                                alwaysShow={true}
+                              />
+                            </>
+                          )}
                         </div>
-                      </ConnectButton>
+                      </div>
                     </TieredSalesIfNotSoldOut>
 
                     {/* Sold Out Message */}

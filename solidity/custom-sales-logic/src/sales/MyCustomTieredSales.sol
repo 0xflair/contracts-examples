@@ -116,7 +116,7 @@ contract MyCustomTieredSales is
         uint256 maxAllowance,
         bytes32[] calldata proof
     ) external payable virtual nonReentrant onlyRole(MERCHANT_ROLE) {
-        super._executeSalePrivileged(minter, tierId, count, maxAllowance, proof);
+        super._executeSaleSkipPayment(minter, tierId, count, maxAllowance, proof);
 
         IERC721MintableRoleBased(layout().targetERC721ContractAddress).mintByRole(_msgSender(), count);
         IERC1155MintableRoleBased(layout().targetERC1155ContractAddress).mintByRole(
